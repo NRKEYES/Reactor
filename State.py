@@ -2,7 +2,7 @@ import json
 import numpy as np
 import pandas as pd
 
-import Molecule
+from Molecule import Molecule
 
 class State(Molecule):
     def __init__(self, JSON_data, key = ''):     
