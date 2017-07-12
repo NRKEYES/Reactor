@@ -80,7 +80,7 @@ class Shotgun(object):
         with open('submit.template' , 'r') as template:
             contents = template.read()
             s = Template(contents)
-            substituted = s.substitute( Name = name,
+            substituted = s.substitute( Name = inputName,
                                         InputName= self.directoryName + '/' + inputName + '.inp',
                                         OutputName = self.directoryName + '/' + outputName + '.out')
             with open('orca.pbs', 'w') as writingFile:
