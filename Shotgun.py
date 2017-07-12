@@ -105,7 +105,7 @@ class Shotgun(object):
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
         running, error = currentCL.communicate()
         print("Check Running get a : " + str(running))
-        if int(running) != 0:
+        if int(running) == 0:
             self.results.set_value(index,'Job Status', 'Finished')
         return int(running) #!= 0: string must me cast to int here.
                             #Check that at least one instance is queued
