@@ -4,7 +4,7 @@ import pandas as pd
 
 from Molecule import Molecule
 
-class State(Molecule):
+class State(object):
     def __init__(self, JSON_data, key = ''):     
         self.key = key
         self.madeUpOf = []

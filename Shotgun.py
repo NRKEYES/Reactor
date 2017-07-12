@@ -8,7 +8,7 @@ import os
 from random import randint
 import subprocess as sub
 from string import Template
-
+import cclib
 
 
 
@@ -66,7 +66,9 @@ class Shotgun(object):
                                   Multi= self.molecule.multiplicity,                                   
                                   XYZ = self.molecule.get_xyz_string())
                 f.write(out)
-                       
+
+
+
     def write_submit(self, index, row):
         name = str(row['ID'])
         #Write Orca Submit File 
@@ -76,10 +78,11 @@ class Shotgun(object):
             substituted = s.substitute( Name = name,
                                         InputName= self.directoryName + '/' + name + '.inp',
                                         OutputName = self.directoryName + '/' + name + '.out') 
-
             with open('orca.pbs', 'w') as f:
                 f.write(substituted)
-    
+
+
+
     def submit_job(self,index, row):
         print ("In submit job")
         #write input file
@@ -89,9 +92,9 @@ class Shotgun(object):
         #Submit File
         sub.check_output(['qsub','orca.pbs'])   #submit job
         self.results.set_value(index,'Job Status', 'Running')
-     
-        
-    
+
+
+
     def check_running(self,index, row):
         #Check if a specificly named job is running, techinically returns number of times it is running.
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
@@ -100,7 +103,8 @@ class Shotgun(object):
         if int(running) != 0:
             self.results.set_value(index,'Job Status', 'Finished')
         return int(running) #!= 0: string must me cast to int here. Check that at least one instance is queued
- 
+
+
     def read_output(self):
         pass
 

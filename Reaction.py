@@ -18,7 +18,7 @@ from string import Template
 
 
 
-class Reaction(State):
+class Reaction(object):
     def __init__(self, JSON_File = ''):
         self.reaction_states = []
         self.reaction_results= {}
@@ -45,7 +45,11 @@ class Reaction(State):
         for state in self.reaction_states:
             state.state_print()
 
-        
+
+    def recover_calculation(self):
+        pass
+
+
     def run_calculations(self, options = None):
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         recation_results= {}
