@@ -45,9 +45,11 @@ class Shotgun(object):
             self.maxJobs = self.size
 
 
+
     def filename(self, index, row):
         name = str(index[0])+str(index[1]+self.molecule.name)
         return name
+
 
 
     def write_input(self, index, row):
@@ -104,11 +106,14 @@ class Shotgun(object):
         # techinically returns number of times it is running
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
         running, error = currentCL.communicate()
-        print (int(running))
-        if int(running) == 0:
+        bRunning = bool(int(running))
+        print (bRunning)
+        if : #currently running
+            return bRunning
+        else:
             self.results.set_value(index,'Job Status', 'Finished')
-        return int(running) #!= 0: string must me cast to int here.
-                            #Check that at least one instance is queued
+            return bRunning
+
 
 
     def read_output(self, index, row):
