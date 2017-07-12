@@ -1,0 +1,18 @@
+# $Name
+
+! $Level
+! $Basis
+! $Opt
+
+
+
+
+
+%coords
+	CTyp = xyz
+	Charge = $Charge
+	Mult = $Multi
+	coords
+$XYZ
+	end
+end
