@@ -122,7 +122,7 @@ class Shotgun(object):
         myOutput = cclib.ccopen(filename)
         if myOutput:
             parsed = myOutput.parse()
-            energy = parsed.scfenergies[-1]
+            self.results.set_value(index,'Energy', parsed.scfenergies[-1])
         else:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.")
         return
