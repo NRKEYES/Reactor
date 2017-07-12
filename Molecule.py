@@ -1,7 +1,3 @@
-import json
-import numpy as np
-import pandas as pd
-
 class Molecule(object):
     def __init__(self, JSON_data, name = ''):
         

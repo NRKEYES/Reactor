@@ -1,22 +1,17 @@
+from random import randint
 from State import State
 from Shotgun import Shotgun
-
+from timeit import default_timer as timer
 
 
 import json
-import numpy as np
-import pandas as pd
 import time
-from timeit import default_timer as timer
 import sys
 import os
-from random import randint
+
+import numpy as np
+import pandas as pd
 import subprocess as sub
-from string import Template
-
-
-
-
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
@@ -58,7 +53,8 @@ class Reaction(object):
         for state in self.reaction_states:
             for mol in state.madeUpOf:
                 print ("Running Molecule: " + mol.name)
-                # maykbe just pass default values, but I would maybe refractor the SHOTGUN CLASS TO EXPECT a LIST
+                # maykbe just pass default values, but I would maybe refractor
+                #  the SHOTGUN CLASS TO EXPECT a LIST
                 if options:
                     shotgun = Shotgun(mol, state.Type,options[0],options[1])
                 else:
