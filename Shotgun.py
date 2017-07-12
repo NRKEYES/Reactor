@@ -104,6 +104,7 @@ class Shotgun(object):
         # techinically returns number of times it is running
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
         running, error = currentCL.communicate()
+        print (int(running))
         if int(running) == 0:
             self.results.set_value(index,'Job Status', 'Finished')
         return int(running) #!= 0: string must me cast to int here.
@@ -126,20 +127,14 @@ class Shotgun(object):
     def job_watcher(self):
         jobsToRun = self.size
         runningJobs = 0
-
+        #Which Molecule are we running calculation for?
+        self.molecule.molecule_print()
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
-            print(self.results)
             time.sleep(10)
-            #clean up and tell how many jobs are left to run
-            #clear_output()
-            sub.Popen(['clear'])
+            print(self.results)
             print("Remaining Jobs: " + str(jobsToRun))
-            #Which Molecule are we running calculation for?
-            self.molecule.molecule_print()
-            
-            
-            
+
             #Iterate over DataFrame
             for index, row in self.results.iterrows():
                 if row['Job Status'] == 'Running':
