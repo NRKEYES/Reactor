@@ -80,7 +80,7 @@ class Shotgun(object):
         with open('submit.template' , 'r') as template:
             contents = template.read()
             s = Template(contents)
-            substituted = s.substitute( Name = name,
+            substituted = s.substitute( Name = inputName,
                                         InputName= self.directoryName + '/' + inputName + '.inp',
                                         OutputName = self.directoryName + '/' + outputName + '.out')
             with open('orca.pbs', 'w') as writingFile:
@@ -128,7 +128,7 @@ class Shotgun(object):
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
             print(self.results)
-            time.sleep(30)
+            time.sleep(10)
             #clean up and tell how many jobs are left to run
             #clear_output()
             sub.Popen(['clear'])
