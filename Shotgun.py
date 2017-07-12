@@ -75,7 +75,7 @@ class Shotgun(object):
 
     def write_submit(self, index, row):
         inputName = str(row['ID'])
-        outputName = filename(index, row)
+        outputName = self.filename(index, row)
         #Write Orca Submit File 
         with open('submit.template' , 'r') as template:
             contents = template.read()
@@ -112,7 +112,7 @@ class Shotgun(object):
 
 
     def read_output(self, index, row):
-        filename = ''
+        filename = self.directoryName + self.filename(index, row)
 
         myOutput = cclib.ccopen(filename)
         parsed = myOutput.parse()
