@@ -144,7 +144,7 @@ class Shotgun(object):
                     if self.check_running(index, row): # If Job passes running check
                         print ('RUNNING ::  ' + str(index[0]+" /"+str(index[1])))
                     else:
-                        read_output(index,row)
+                        self.read_output(index,row)
                         jobsToRun -= 1
                         runningJobs -= 1
 
