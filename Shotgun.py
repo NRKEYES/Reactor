@@ -116,10 +116,7 @@ class Shotgun(object):
         myOutput = cclib.ccopen(filename)
         if myOutput:
             parsed = myOutput.parse()
-            if parsed.optdone:
-                energy = parsed.scfenergies[-1]
-            else:
-                print("Optimization failed")
+            energy = parsed.scfenergies[-1]
         else:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.")
         return
