@@ -108,7 +108,7 @@ class Shotgun(object):
         running, error = currentCL.communicate()
         bRunning = bool(int(running))
         print (bRunning)
-        if : #currently running
+        if bRunning: #currently running
             return bRunning
         else:
             self.results.set_value(index,'Job Status', 'Finished')
