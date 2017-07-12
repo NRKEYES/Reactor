@@ -112,8 +112,8 @@ class Shotgun(object):
 
 
     def read_output(self, index, row):
-        filename = self.directoryName + self.filename(index, row)
-
+        filename = self.directoryName + self.filename(index, row) + ".out"
+        print (" The file name is :" + filename)
         myOutput = cclib.ccopen(filename)
         parsed = myOutput.parse()
         if parsed.optdone:
