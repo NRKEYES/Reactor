@@ -3,14 +3,13 @@ import subprocess as sub
 from string import Template
 from timeit import default_timer as timer
 
-import json
-import numpy as np
-import pandas as pd
 import time
 import sys
 import os
 import cclib
 
+import numpy as np
+import pandas as pd
 
 
 
@@ -30,13 +29,14 @@ class Shotgun(object):
         
         # Build Index for data frame bases on what options were selected.
         self.size = len(self.functional)*len(self.basisSet)
-        self.index = pd.MultiIndex.from_product([self.functional,self.basisSet], names =['Functional','Basis Set'])
+        self.index = pd.MultiIndex.from_product([self.functional,self.basisSet],
+                                                names =['Functional','Basis Set'])
         self.results = pd.DataFrame(index = self.index) # Create dataframe of size INDEX
         
         # Fill in data frame with blanks
         self.results['ID'] = np.random.randint(10**5,10**8, size=self.size)
         self.results['Job Status'] =  None
-        self.results['Energy'] = np.random.randint(1,1000, size=self.size) # This is just a random energy value
+        self.results['Energy'] = np.nan
         self.results['Run Time'] = np.nan
         
         if self.size > 10:
@@ -45,14 +45,17 @@ class Shotgun(object):
             self.maxJobs = self.size
 
 
+    def filename(self, index, row):
+        name = str(index[0])+str(index[1]+molecule.name)
+        return name
 
-    def write_input(self, index, row):       
+
+    def write_input(self, index, row):
         name = str(row['ID'])
         func = str(index[0])
         bs = str(index[1])
         Optimization  = {'Well': 'TightOpt',
-                        'TS': 'TSOpt'}
-        
+                            'TS': 'TSOpt'}
         # Read in input template
         with open('input.template','r') as template:
             temp = template.read()
@@ -64,28 +67,28 @@ class Shotgun(object):
                                    Basis = bs,
                                    Opt = Optimization[self.OptType],
                                   Charge = self.molecule.charge,
-                                  Multi= self.molecule.multiplicity,                                   
+                                  Multi= self.molecule.multiplicity,
                                   XYZ = self.molecule.get_xyz_string())
                 f.write(out)
 
 
 
     def write_submit(self, index, row):
-        name = str(row['ID'])
+        inputName = str(row['ID'])
+        outputName = filename(index, row)
         #Write Orca Submit File 
         with open('submit.template' , 'r') as template:
             contents = template.read()
             s = Template(contents)
             substituted = s.substitute( Name = name,
-                                        InputName= self.directoryName + '/' + name + '.inp',
-                                        OutputName = self.directoryName + '/' + name + '.out') 
-            with open('orca.pbs', 'w') as f:
-                f.write(substituted)
+                                        InputName= self.directoryName + '/' + inputName + '.inp',
+                                        OutputName = self.directoryName + '/' + outputName + '.out')
+            with open('orca.pbs', 'w') as writingFile:
+                writingFile.write(substituted)
 
 
 
-    def submit_job(self,index, row):
-        print ("In submit job")
+    def submit_job(self, index, row):
         #write input file
         self.write_input(index,row)
         #write submit file
@@ -96,18 +99,27 @@ class Shotgun(object):
 
 
 
-    def check_running(self,index, row):
-        #Check if a specificly named job is running, techinically returns number of times it is running.
+    def check_running(self, index, row):
+        #Check if a specificly named job is running,
+        # techinically returns number of times it is running
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
         running, error = currentCL.communicate()
         print("Check Running get a : " + str(running))
         if int(running) != 0:
             self.results.set_value(index,'Job Status', 'Finished')
-        return int(running) #!= 0: string must me cast to int here. Check that at least one instance is queued
+        return int(running) #!= 0: string must me cast to int here.
+                            #Check that at least one instance is queued
 
 
-    def read_output(self):
-        pass
+    def read_output(self, index, row):
+        filename = ''
+
+        myOutput = cclib.ccopen(filename)
+        parsed = myOutput.parse()
+        if parsed.optdone:
+            energy = parsed.scfenergies[-1]
+        else:
+            print("Optimization failed")
 
     def job_watcher(self):
         jobsToRun = self.size
@@ -127,22 +139,23 @@ class Shotgun(object):
             
             
             #Iterate over DataFrame
-            for index, dfRow in self.results.iterrows():
-                if dfRow['Job Status'] == 'Running':
-                    if self.check_running(index, dfRow): # If Job passes running check
+            for index, row in self.results.iterrows():
+                if row['Job Status'] == 'Running':
+                    if self.check_running(index, row): # If Job passes running check
                         print ('RUNNING ::  ' + str(index[0]+" /"+str(index[1])))
                     else:
+                        read_output(index,row)
                         jobsToRun -= 1
                         runningJobs -= 1
-                        pass
-                
+
+
                 #Go down dataframe and sumbit empty jobs
                 if runningJobs != self.maxJobs:
-                    self.submit_job(index, dfRow)
-                    print(str(index)+":"+ str(dfRow['Job Status']))
+                    self.submit_job(index, row)
+                    print(str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
 
-    def fire(self, state):        
+    def fire(self, state):
         print("Firing Calculation")
         print ("-----------------------Entering Submit cycle")
         start = timer()

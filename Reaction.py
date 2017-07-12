@@ -1,7 +1,6 @@
 from random import randint
 from State import State
 from Shotgun import Shotgun
-from timeit import default_timer as timer
 
 
 import json
@@ -12,10 +11,12 @@ import os
 import numpy as np
 import pandas as pd
 import subprocess as sub
+from timeit import default_timer as timer
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
         self.reaction_states = []
+        ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
         
         
@@ -26,13 +27,11 @@ class Reaction(object):
         except:
             print("JSON FILE ERROR")
             sys.exit()
-        
         #Create States
         for key, state in zip(parsed_data['States'].keys(),parsed_data['States']):
             self.reaction_states.append(State(parsed_data,key))
 
-     
-        
+
         #Create Tree of states _____THIS PART CAN WAIT____
 
         
@@ -46,14 +45,11 @@ class Reaction(object):
 
 
     def run_calculations(self, options = None):
-        ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
-        recation_results= {}
-        
-        
+        ## TODO Change this to only sumbit each molecule once....
         for state in self.reaction_states:
             for mol in state.madeUpOf:
                 print ("Running Molecule: " + mol.name)
-                # maykbe just pass default values, but I would maybe refractor
+                # maybe just pass default values, but I would maybe refractor
                 #  the SHOTGUN CLASS TO EXPECT a LIST
                 if options:
                     shotgun = Shotgun(mol, state.Type,options[0],options[1])
