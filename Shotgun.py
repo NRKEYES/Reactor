@@ -128,7 +128,7 @@ class Shotgun(object):
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
             print(self.results)
-            time.sleep(30)
+            time.sleep(10)
             #clean up and tell how many jobs are left to run
             #clear_output()
             sub.Popen(['clear'])
