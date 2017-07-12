@@ -104,7 +104,6 @@ class Shotgun(object):
         # techinically returns number of times it is running
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
         running, error = currentCL.communicate()
-        print("Check Running get a : " + str(running))
         if int(running) == 0:
             self.results.set_value(index,'Job Status', 'Finished')
         return int(running) #!= 0: string must me cast to int here.
@@ -115,11 +114,17 @@ class Shotgun(object):
         filename = self.directoryName + "/" + self.filename(index, row) + ".out"
         print (" The file name is :" + filename)
         myOutput = cclib.ccopen(filename)
-        parsed = myOutput.parse()
-        if parsed.optdone:
-            energy = parsed.scfenergies[-1]
+        if myOutput:
+            parsed = myOutput.parse()
+            if parsed.optdone:
+                energy = parsed.scfenergies[-1]
+            else:
+                print("Optimization failed")
         else:
-            print("Optimization failed")
+            print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.")
+        return
+
+
 
     def job_watcher(self):
         jobsToRun = self.size
