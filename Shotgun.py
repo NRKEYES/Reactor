@@ -46,7 +46,7 @@ class Shotgun(object):
 
 
     def filename(self, index, row):
-        name = str(index[0])+str(index[1]+molecule.name)
+        name = str(index[0])+str(index[1]+self.molecule.name)
         return name
 
 
