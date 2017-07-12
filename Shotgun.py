@@ -132,9 +132,7 @@ class Shotgun(object):
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
             time.sleep(10)
-            print(self.results)
             print("Remaining Jobs: " + str(jobsToRun))
-
             #Iterate over DataFrame
             for index, row in self.results.iterrows():
                 if row['Job Status'] == 'Running':
@@ -152,9 +150,13 @@ class Shotgun(object):
                     print(str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
 
+
+
     def fire(self, state):
         print("Firing Calculation")
-        print ("-----------------------Entering Submit cycle")
+        print ("--------------------------------------------------------------------------------------------")
+        print ("--------------------------------Entering Submit cycle---------------------------------------")
+        print ("--------------------------------------------------------------------------------------------")
         start = timer()
         self.job_watcher()
         end = timer()

@@ -56,4 +56,4 @@ class Reaction(object):
                 else:
                     shotgun = Shotgun(mol, state.Type)
                 # Add to list of results:
-                self.reaction_results[state.key] = shotgun.fire(mol)
+                self.reaction_results[mol] = shotgun.fire(mol)
