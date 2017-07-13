@@ -82,3 +82,4 @@ class Reaction(object):
             for mol in state.madeUpOf:
                 tempEnergy[state.key] =  tempEnergy[state.key] + self.reaction_results[mol.name]["Energy"]
             cleanData[state.key] = tempEnergy[state.key]
+        return cleanData
