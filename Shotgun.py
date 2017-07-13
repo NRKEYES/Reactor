@@ -188,7 +188,7 @@ class Shotgun(object):
 
     def recover(self, state):
         print ("Recovering molecular data... " + self.molecule.name)
-        searchTerm = directoryName +"/*.out"
+        searchTerm = self.directoryName +"/*.out"
         files = glob.glob(searchTerm) # recturns a list of all the .out files in a directory
         for output in files:
             self.read_output(filename = ouput)
