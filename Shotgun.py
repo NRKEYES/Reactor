@@ -136,13 +136,24 @@ class Shotgun(object):
 
     def read_output(self, index, row):
         filename = self.directoryName + "/" + self.filename(index, row) + ".out"
-        print (" The file name is :" + filename)
-        myOutput = cclib.ccopen(filename)
+         myOutput = cclib.ccopen(filename)
         try:
             parsed = myOutput.parse()
-            self.results.set_value(index,'Energy', parsed.scfenergies[-1])
+            if self.OptType == "Well" or self.OptType =='TS':
+                if parsed.optdone:
+                    self.results.set_value(index,'Energy', parsed.scfenergies[-1])
+                else:
+                    self.results.set_value(index,'Energy', np.nan)
+            else:
+                self.results.set_value(index,'Energy', parsed.scfenergies[-1])
         except:
-            print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.")
+            print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.!!!!!!!!!!!!!!!!!!!!!!!!")
+            print ("Filename: "+ filename)
+       
+        
+            
+
+
 
 
     def job_watcher(self):
