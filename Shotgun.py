@@ -134,8 +134,10 @@ class Shotgun(object):
 
 
 
-    def read_output(self, index, row):
-        filename = self.directoryName + "/" + self.filename(index, row) + ".out"
+    def read_output(self, index= None, row= None, filename = None):
+        if filename == None:
+            filename = self.directoryName + "/" + self.filename(index, row) + ".out"
+            # The else is implicit. Filename will just keep its passed value...
         myOutput = cclib.ccopen(filename)
         try:
             parsed = myOutput.parse()
@@ -169,7 +171,7 @@ class Shotgun(object):
                         pass
                         #print ('RUNNING ::  ' + str(index[0]+" /"+str(index[1])))
                     else:
-                        self.read_output(index,row)
+                        self.read_output(index = index, row = row)
                         jobsToRun -= 1
                         runningJobs -= 1
 
@@ -179,6 +181,16 @@ class Shotgun(object):
                     self.submit_job(index, row)
                     print("\n"+str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
+
+
+
+    def recover(self, state):
+        print ("Recovering molecular data... " + mol.name)
+        searchTerm = directoryName +"/*.out"
+        files = glob.glob(searchTerm) # recturns a list of all the .out files in a directory
+        for output in files:
+            self.read_output(filename = ouput)
+        return self.results
 
 
 

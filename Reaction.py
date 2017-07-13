@@ -6,6 +6,7 @@ from Shotgun import Shotgun
 import json
 import time
 import sys
+import glob
 import os
 
 import numpy as np
@@ -57,4 +58,20 @@ class Reaction(object):
                     shotgun = Shotgun(mol, state.Type)
                 # Add to list of results:
                 self.reaction_results[mol.name] = shotgun.fire(mol)
+                print (self.reaction_results[mol.name])
+
+
+
+
+files = glob.glob("output/*.out") # recturns a list of all the .out files in a directory
+
+
+    def recover_calculations(self):
+        for state in self.reaction_states:
+            for mol in state.madeUpOf:
+                if options:
+                    shotgun = Shotgun(mol, state.Type,options[0],options[1])
+                else:
+                    shotgun = Shotgun(mol, state.Type)
+                self.reaction_results[mol.name] = shotgun.recover(mol)
                 print (self.reaction_results[mol.name])
