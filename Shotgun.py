@@ -158,6 +158,7 @@ class Shotgun(object):
 
 
     def job_watcher(self):
+        print (self.results['Energy'].isnull().sum())
         jobsToRun = self.size-self.results['Energy'].isnull().sum()
         runningJobs = 0
         #Which Molecule are we running calculation for?
