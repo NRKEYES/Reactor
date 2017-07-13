@@ -18,8 +18,6 @@ class Reaction(object):
         self.reaction_states = []
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
-        
-        
         # Open up the JSON File and quit program if FAIL
         try:
             with open(JSON_File) as file:

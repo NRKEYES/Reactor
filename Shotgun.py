@@ -146,6 +146,14 @@ class Shotgun(object):
                 if parsed.optdone:
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
                     self.results.set_value(index,'Job Status', 'Finished')
+                    # If energy is found, then delete error files
+                    try:
+                        for file in glob.glob(str(row['ID'])):
+                            os.remove(file)
+                        for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
+                            os.remove(file)
+                    except:
+                        print ("No orca file to delete. Continuing.")
                 else:
                     self.results.set_value(index,'Energy', np.nan)
             else:
@@ -153,7 +161,10 @@ class Shotgun(object):
         except:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.!!!!!!!!!!!!!!!!!!!!!!!!")
             print ("Filename: "+ filename)
-
+        #Remove anywork files that exist
+        try:
+            for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
+            os.remove(file)
 
 
 
