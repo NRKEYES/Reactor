@@ -1,233 +1,233 @@
 5MnO+
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     49308225   Finished -33353.571672       NaN
-           6-31G      38703527   Finished -33350.768408       NaN
-           6-31+G*    58461017   Finished -33351.877123       NaN
-M06        6-311G     45435172   Finished -33353.486176       NaN
-           6-31G      62383962   Finished -33351.060562       NaN
-           6-31+G*    39692500   Finished -33352.077412       NaN
-TPSS0      6-311G     80261138   Finished -33355.730780       NaN
-           6-31G      87018792   Finished -33353.106994       NaN
-           6-31+G*    27028595   Finished -33354.146564       NaN
+B3LYP      6-311G     91172747   Finished -33353.571672       NaN
+           6-31G      81433451   Finished -33350.768408       NaN
+           6-31+G*     2419492   Finished -33351.877123       NaN
+M06        6-311G     59496031   Finished -33353.486176       NaN
+           6-31G      87958630   Finished -33351.060562       NaN
+           6-31+G*    28516897   Finished -33352.077412       NaN
+TPSS0      6-311G     55400020   Finished -33355.730780       NaN
+           6-31G       9428540   Finished -33353.106994       NaN
+           6-31+G*    71069037   Finished -33354.146564       NaN
 ---------------------------------------------------------------------------------
 H2
                             ID Job Status     Energy  Run Time
 Functional Basis Set                                          
-B3LYP      6-311G     16251982   Finished -31.833925       NaN
-           6-31G      10058337   Finished -31.802391       NaN
-           6-31+G*    55253667   Finished -31.802391       NaN
-M06        6-311G     47536728   Finished -31.798035       NaN
-           6-31G      49768811   Finished -31.753789       NaN
-           6-31+G*    62083368   Finished -31.753789       NaN
-TPSS0      6-311G     55317713   Finished -31.973359       NaN
-           6-31G      20515248   Finished -31.939819       NaN
-           6-31+G*    66624682   Finished -31.939819       NaN
+B3LYP      6-311G      9429431   Finished -31.833925       NaN
+           6-31G      45785263   Finished -31.802391       NaN
+           6-31+G*    73867803   Finished -31.802391       NaN
+M06        6-311G     77404175   Finished -31.798035       NaN
+           6-31G      81034830   Finished -31.753789       NaN
+           6-31+G*    43266335   Finished -31.753789       NaN
+TPSS0      6-311G     63764035   Finished -31.973359       NaN
+           6-31G      96294199   Finished -31.939819       NaN
+           6-31+G*    66663293   Finished -31.939819       NaN
 ---------------------------------------------------------------------------------
 7MnO+
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G      4652294   Finished -33353.097141       NaN
-           6-31G      32282776   Finished -33350.307103       NaN
-           6-31+G*    57666170   Finished -33351.405686       NaN
-M06        6-311G      3738506   Finished -33353.059756       NaN
-           6-31G      78313406   Finished -33350.638722       NaN
-           6-31+G*    66176698   Finished -33351.652594       NaN
-TPSS0      6-311G     78351624   Finished -33355.321642       NaN
-           6-31G      50486232   Finished -33352.718835       NaN
-           6-31+G*    17686377   Finished -33353.750525       NaN
+B3LYP      6-311G     84035977   Finished -33353.097141       NaN
+           6-31G        505277   Finished -33350.307103       NaN
+           6-31+G*    28362452   Finished -33351.405686       NaN
+M06        6-311G     98991180   Finished -33353.059756       NaN
+           6-31G      25908957   Finished -33350.638722       NaN
+           6-31+G*     7910016   Finished -33351.652594       NaN
+TPSS0      6-311G     36241694   Finished -33355.321642       NaN
+           6-31G      58933216   Finished -33352.718835       NaN
+           6-31+G*    38023675   Finished -33353.750525       NaN
 ---------------------------------------------------------------------------------
 Well-1-5
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     19547539   Finished -33385.767043       NaN
-           6-31G      60727782   Finished -33382.958078       NaN
-           6-31+G*    22157764   Finished -33384.145359       NaN
-M06        6-311G     72880066   Finished -33385.626329       NaN
-           6-31G      77074038   Finished -33383.123991       NaN
-           6-31+G*    70761263   Finished -33384.281708       NaN
-TPSS0      6-311G      7548211   Finished -33388.039470       NaN
-           6-31G       3379395   Finished -33385.378332       NaN
-           6-31+G*    40349621   Finished -33386.517481       NaN
+B3LYP      6-311G      9949352   Finished -33385.767043       NaN
+           6-31G      75459411   Finished -33382.958078       NaN
+           6-31+G*    34880432   Finished -33384.145359       NaN
+M06        6-311G     27475283   Finished -33385.626329       NaN
+           6-31G      69265563   Finished -33383.123991       NaN
+           6-31+G*    42857074   Finished -33384.281708       NaN
+TPSS0      6-311G     23943517   Finished -33388.039470       NaN
+           6-31G      89810112   Finished -33385.378332       NaN
+           6-31+G*    87151075   Finished -33386.517481       NaN
 ---------------------------------------------------------------------------------
 Well-1-7
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     11763307   Finished -33385.295147       NaN
-           6-31G      60922871   Finished -33382.509267       NaN
-           6-31+G*    99567510   Finished -33383.673865       NaN
-M06        6-311G     11622341   Finished -33385.195736       NaN
-           6-31G      84559487   Finished -33382.720482       NaN
-           6-31+G*    12737496   Finished -33383.848019       NaN
-TPSS0      6-311G     79458843   Finished -33387.637751       NaN
-           6-31G      86609366   Finished -33385.005671       NaN
-           6-31+G*    48183871   Finished -33386.123955       NaN
+B3LYP      6-311G      8963564   Finished -33385.295147       NaN
+           6-31G      47781335   Finished -33382.509267       NaN
+           6-31+G*    21199548   Finished -33383.673865       NaN
+M06        6-311G     58609939   Finished -33385.195736       NaN
+           6-31G       3743502   Finished -33382.720482       NaN
+           6-31+G*    91617903   Finished -33383.848019       NaN
+TPSS0      6-311G     74481842   Finished -33387.637751       NaN
+           6-31G       7119873   Finished -33385.005671       NaN
+           6-31+G*    24267782   Finished -33386.123955       NaN
 ---------------------------------------------------------------------------------
 TS-1-5
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G      3121898   Finished -33381.489485       NaN
-           6-31G      61656475   Finished           NaN       NaN
-           6-31+G*    57176600   Finished -33383.738411       NaN
-M06        6-311G     56793091   Finished           NaN       NaN
-           6-31G      56876251   Finished           NaN       NaN
-           6-31+G*    97571892   Finished -33383.922792       NaN
-TPSS0      6-311G      9100562   Finished -33387.599088       NaN
-           6-31G       3437419   Finished -33384.848347       NaN
-           6-31+G*    57342587   Finished -33385.997187       NaN
+B3LYP      6-311G     55457023   Finished -33381.489485       NaN
+           6-31G       3250449   Finished           NaN       NaN
+           6-31+G*    79975802   Finished -33383.738411       NaN
+M06        6-311G      7609399   Finished           NaN       NaN
+           6-31G      83290035   Finished           NaN       NaN
+           6-31+G*    43838557   Finished -33383.922792       NaN
+TPSS0      6-311G     16211748   Finished -33387.599088       NaN
+           6-31G      87794926   Finished -33384.848347       NaN
+           6-31+G*    37012505   Finished -33385.997187       NaN
 ---------------------------------------------------------------------------------
 TS-1-7
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     56178397   Finished           NaN       NaN
-           6-31G       8604360   Finished -33382.199918       NaN
-           6-31+G*    95685251   Finished -33383.329012       NaN
-M06        6-311G     42794268   Finished -33384.883625       NaN
-           6-31G      25326161   Finished           NaN       NaN
-           6-31+G*    44203581   Finished -33383.505421       NaN
-TPSS0      6-311G     91015870   Finished -33387.579692       NaN
-           6-31G      36835678   Finished -33384.648810       NaN
-           6-31+G*    56239860   Finished           NaN       NaN
+B3LYP      6-311G     57612846   Finished -33384.997585       NaN
+           6-31G      69993726   Finished -33382.199918       NaN
+           6-31+G*    62755189   Finished -33383.329012       NaN
+M06        6-311G     88044451   Finished -33384.883625       NaN
+           6-31G       6673444   Finished -33382.434150       NaN
+           6-31+G*    17074478   Finished -33383.505421       NaN
+TPSS0      6-311G     16096324   Finished -33387.579692       NaN
+           6-31G      36909292   Finished -33384.648810       NaN
+           6-31+G*    80656412   Finished -33385.716357       NaN
 ---------------------------------------------------------------------------------
 Well-2-5
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     16900441   Finished -33387.288237       NaN
-           6-31G      65037236   Finished -33384.523361       NaN
-           6-31+G*    87101039   Finished -33385.606855       NaN
-M06        6-311G     71771993   Finished -33387.232576       NaN
-           6-31G      98428138   Finished -33384.833980       NaN
-           6-31+G*    83487470   Finished -33385.852803       NaN
-TPSS0      6-311G     82721898   Finished -33389.370735       NaN
-           6-31G      83489019   Finished -33386.780452       NaN
-           6-31+G*    14175593   Finished -33387.814253       NaN
+B3LYP      6-311G      2791900   Finished -33387.288237       NaN
+           6-31G      44082874   Finished -33384.523361       NaN
+           6-31+G*    28079815   Finished -33385.606855       NaN
+M06        6-311G     40846291   Finished -33387.232576       NaN
+           6-31G      60389162   Finished -33384.833980       NaN
+           6-31+G*    47771740   Finished -33385.852803       NaN
+TPSS0      6-311G     69800662   Finished -33389.370735       NaN
+           6-31G      76409319   Finished -33386.780452       NaN
+           6-31+G*    76260132   Finished -33387.814253       NaN
 ---------------------------------------------------------------------------------
 Well-2-7
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     88071279   Finished -33386.164099       NaN
-           6-31G      40447737   Finished -33383.334585       NaN
-           6-31+G*    82633434   Finished -33384.494835       NaN
-M06        6-311G     32794823   Finished -33386.021453       NaN
-           6-31G      77193696   Finished           NaN       NaN
-           6-31+G*    62692115   Finished -33384.737449       NaN
-TPSS0      6-311G     43648855   Finished -33388.366080       NaN
-           6-31G      44367901   Finished -33385.765656       NaN
-           6-31+G*    19621659   Finished -33386.883729       NaN
+B3LYP      6-311G     20161434   Finished -33386.164099       NaN
+           6-31G      64610744   Finished -33383.334585       NaN
+           6-31+G*    58878067   Finished -33384.494835       NaN
+M06        6-311G     28473614   Finished -33386.021453       NaN
+           6-31G      94308352   Finished           NaN       NaN
+           6-31+G*     9337023   Finished -33384.737449       NaN
+TPSS0      6-311G     17705736   Finished -33388.366080       NaN
+           6-31G      93565599   Finished -33385.765656       NaN
+           6-31+G*     3025196   Finished -33386.883729       NaN
 ---------------------------------------------------------------------------------
 TS-2-5
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     76404747   Finished -33386.636134       NaN
-           6-31G       9734174   Finished -33383.832550       NaN
-           6-31+G*    29522693   Finished -33385.065231       NaN
-M06        6-311G     67058233   Finished -33386.725024       NaN
-           6-31G      87240964   Finished -33384.298784       NaN
-           6-31+G*    82043335   Finished -33385.399770       NaN
-TPSS0      6-311G     22044865   Finished -33388.770435       NaN
-           6-31G      77949253   Finished -33386.134202       NaN
-           6-31+G*     4592439   Finished -33387.316058       NaN
+B3LYP      6-311G      3792643   Finished -33386.636134       NaN
+           6-31G      68222347   Finished -33383.832550       NaN
+           6-31+G*    98352151   Finished -33385.065231       NaN
+M06        6-311G     65631987   Finished -33386.725024       NaN
+           6-31G       6900811   Finished -33384.298784       NaN
+           6-31+G*      949576   Finished -33385.399770       NaN
+TPSS0      6-311G      4347377   Finished -33388.770435       NaN
+           6-31G       7121206   Finished -33386.134202       NaN
+           6-31+G*    48520207   Finished -33387.316058       NaN
 ---------------------------------------------------------------------------------
 TS-2-7
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     58129844   Finished -33385.655166       NaN
-           6-31G      39161365   Finished -33382.860239       NaN
-           6-31+G*    71672526   Finished -33383.871035       NaN
-M06        6-311G     14207763   Finished -33385.606792       NaN
-           6-31G      19249508   Finished           NaN       NaN
-           6-31+G*    80903650   Finished           NaN       NaN
-TPSS0      6-311G     21390683   Finished -33387.966133       NaN
-           6-31G      19715811   Finished -33385.363187       NaN
-           6-31+G*    16677794   Finished -33386.333816       NaN
+B3LYP      6-311G     62666352   Finished -33385.655166       NaN
+           6-31G      79881768   Finished -33382.860239       NaN
+           6-31+G*    82270729   Finished -33383.871035       NaN
+M06        6-311G     79334047   Finished -33385.606792       NaN
+           6-31G      40615428   Finished           NaN       NaN
+           6-31+G*    74812966   Finished           NaN       NaN
+TPSS0      6-311G     13575124   Finished -33387.966133       NaN
+           6-31G      85616914   Finished -33385.363187       NaN
+           6-31+G*    71393209   Finished -33386.333816       NaN
 ---------------------------------------------------------------------------------
 Well-3-5
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     88572199   Finished -33387.570442       NaN
-           6-31G      69282698   Finished -33385.730401       NaN
-           6-31+G*    50867449   Finished -33386.267155       NaN
-M06        6-311G     67294785   Finished -33387.377396       NaN
-           6-31G      47023163   Finished -33386.575921       NaN
-           6-31+G*    65382205   Finished -33386.366059       NaN
-TPSS0      6-311G     11733017   Finished -33389.735394       NaN
-           6-31G      87610550   Finished -33386.594558       NaN
-           6-31+G*    99638103   Finished -33388.514918       NaN
+B3LYP      6-311G     89074017   Finished -33387.570442       NaN
+           6-31G      46167782   Finished -33385.730401       NaN
+           6-31+G*    48870950   Finished -33386.267155       NaN
+M06        6-311G     16308733   Finished -33387.377396       NaN
+           6-31G      60039480   Finished -33386.575921       NaN
+           6-31+G*    72338019   Finished -33386.366059       NaN
+TPSS0      6-311G      3351373   Finished -33389.735394       NaN
+           6-31G      66895748   Finished -33386.594558       NaN
+           6-31+G*    43745875   Finished -33388.514918       NaN
 ---------------------------------------------------------------------------------
 Well-3-7
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     35822750   Finished -33389.006763       NaN
-           6-31G      68517217   Finished -33386.113584       NaN
-           6-31+G*    96898689   Finished -33387.139132       NaN
-M06        6-311G      8338128   Finished -33389.000766       NaN
-           6-31G      68063610   Finished -33386.474715       NaN
-           6-31+G*    66829131   Finished -33387.501485       NaN
-TPSS0      6-311G     77072236   Finished -33391.345748       NaN
-           6-31G      61383312   Finished -33388.655106       NaN
-           6-31+G*    90516273   Finished -33389.620032       NaN
+B3LYP      6-311G     41835298   Finished -33389.006763       NaN
+           6-31G      25052743   Finished -33386.113584       NaN
+           6-31+G*    42583504   Finished -33387.139132       NaN
+M06        6-311G      1223917   Finished -33389.000766       NaN
+           6-31G      31843007   Finished -33386.474715       NaN
+           6-31+G*    77930442   Finished -33387.501485       NaN
+TPSS0      6-311G      8791452   Finished -33391.345748       NaN
+           6-31G      28798518   Finished -33388.655106       NaN
+           6-31+G*     3958412   Finished -33389.620032       NaN
 ---------------------------------------------------------------------------------
 5Mn+
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     75470441   Finished -31308.190292       NaN
-           6-31G      54778460   Finished -31305.901182       NaN
-           6-31+G*    87277036   Finished -31306.015371       NaN
-M06        6-311G     56715710   Finished -31308.622211       NaN
-           6-31G      57595636   Finished -31306.628750       NaN
-           6-31+G*    59315818   Finished -31306.158142       NaN
-TPSS0      6-311G     77783432   Finished -31308.614521       NaN
-           6-31G      88249700   Finished -31305.839190       NaN
-           6-31+G*    69644077   Finished -31307.809702       NaN
+B3LYP      6-311G     12543513       None -31308.190292       NaN
+           6-31G      29393089       None -31305.901182       NaN
+           6-31+G*    14550171       None -31306.015371       NaN
+M06        6-311G     43629412       None -31308.622211       NaN
+           6-31G      20168797       None -31306.628750       NaN
+           6-31+G*    60854862       None -31306.158142       NaN
+TPSS0      6-311G     24578040       None -31308.614521       NaN
+           6-31G      66280070       None -31305.839190       NaN
+           6-31+G*    75009548       None -31307.809702       NaN
 ---------------------------------------------------------------------------------
 H2O
                             ID Job Status       Energy  Run Time
 Functional Basis Set                                            
-B3LYP      6-311G     19006475   Finished -2078.373582       NaN
-           6-31G      64232202   Finished -2077.561384       NaN
-           6-31+G*    47775674   Finished -2078.518652       NaN
-M06        6-311G     96561063   Finished -2078.313650       NaN
-           6-31G      89746923   Finished -2077.646827       NaN
-           6-31+G*    21917715   Finished -2078.556967       NaN
-TPSS0      6-311G     40900589   Finished -2078.875261       NaN
-           6-31G       2113645   Finished -2078.134781       NaN
-           6-31+G*    89022053   Finished -2079.002490       NaN
+B3LYP      6-311G     15937211   Finished -2078.373582       NaN
+           6-31G      93881447   Finished -2077.561384       NaN
+           6-31+G*    32093741   Finished -2078.518652       NaN
+M06        6-311G     14956777   Finished -2078.313650       NaN
+           6-31G      61195741   Finished -2077.646827       NaN
+           6-31+G*    69456665   Finished -2078.556967       NaN
+TPSS0      6-311G     19123707   Finished -2078.875261       NaN
+           6-31G      66002845   Finished -2078.134781       NaN
+           6-31+G*    17538617   Finished -2079.002490       NaN
 ---------------------------------------------------------------------------------
 7Mn+
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     34720001   Finished -31308.190292       NaN
-           6-31G      89707319   Finished -31305.901182       NaN
-           6-31+G*    95618242   Finished -31306.015371       NaN
-M06        6-311G     64347848   Finished -31308.622211       NaN
-           6-31G      90835094   Finished -31306.628750       NaN
-           6-31+G*    29598334   Finished -31306.158142       NaN
-TPSS0      6-311G     96192731   Finished -31308.614521       NaN
-           6-31G      10946385   Finished -31305.839190       NaN
-           6-31+G*    52549427   Finished -31307.809702       NaN
+B3LYP      6-311G     45945245       None -31308.190292       NaN
+           6-31G      21907707       None -31305.901182       NaN
+           6-31+G*    52406176       None -31306.015371       NaN
+M06        6-311G     83969489       None -31308.622211       NaN
+           6-31G      38392056       None -31306.628750       NaN
+           6-31+G*    77088354       None -31306.158142       NaN
+TPSS0      6-311G     96315913       None -31308.614521       NaN
+           6-31G      26279326       None -31305.839190       NaN
+           6-31+G*    61214030       None -31307.809702       NaN
 ---------------------------------------------------------------------------------
 6MnOH+
                             ID Job Status        Energy  Run Time
 Functional Basis Set                                             
-B3LYP      6-311G     43627729   Finished -33372.141135       NaN
-           6-31G      32463220   Finished -33369.443896       NaN
-           6-31+G*    35092394   Finished -33370.561301       NaN
-M06        6-311G     13372868   Finished -33372.322517       NaN
-           6-31G      36525923   Finished -33369.998313       NaN
-           6-31+G*    79216835   Finished -33370.953163       NaN
-TPSS0      6-311G     50198843   Finished -33374.387420       NaN
-           6-31G      18378544   Finished           NaN       NaN
-           6-31+G*    49911357   Finished -33372.867548       NaN
+B3LYP      6-311G     43658847   Finished -33372.141135       NaN
+           6-31G       8227797   Finished -33369.443896       NaN
+           6-31+G*    88357451   Finished -33370.561301       NaN
+M06        6-311G      9250383   Finished -33372.322517       NaN
+           6-31G      81095417   Finished -33369.998313       NaN
+           6-31+G*    84106464   Finished -33370.953163       NaN
+TPSS0      6-311G     54722924   Finished -33374.387420       NaN
+           6-31G      64305540   Finished           NaN       NaN
+           6-31+G*     1621608   Finished -33372.867548       NaN
 ---------------------------------------------------------------------------------
 H
                             ID Job Status     Energy  Run Time
 Functional Basis Set                                          
-B3LYP      6-311G     94032067   Finished -13.572075       NaN
-           6-31G      65527545   Finished -13.520305       NaN
-           6-31+G*    96451247   Finished -13.520305       NaN
-M06        6-311G     31144465   Finished -13.602341       NaN
-           6-31G      95672387   Finished -13.549063       NaN
-           6-31+G*    82857871   Finished -13.549063       NaN
-TPSS0      6-311G     35333197   Finished -13.601255       NaN
-           6-31G      65917741   Finished -13.549794       NaN
-           6-31+G*    43606770   Finished -13.549794       NaN
+B3LYP      6-311G     45555495       None -13.572075       NaN
+           6-31G       4622941       None -13.520305       NaN
+           6-31+G*    79581163       None -13.520305       NaN
+M06        6-311G     42524990       None -13.602341       NaN
+           6-31G      77865075       None -13.549063       NaN
+           6-31+G*    19919487       None -13.549063       NaN
+TPSS0      6-311G     47057447       None -13.601255       NaN
+           6-31G      30079176       None -13.549794       NaN
+           6-31+G*    71220160       None -13.549794       NaN
