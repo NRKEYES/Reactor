@@ -161,12 +161,13 @@ class Shotgun(object):
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
             time.sleep(10)
-            print("Remaining Jobs: " + str(jobsToRun))
+            print("Remaining Jobs: " + str(jobsToRun), end = '')
             #Iterate over DataFrame
             for index, row in self.results.iterrows():
                 if row['Job Status'] == 'Running':
                     if self.check_running(index, row): # If Job passes running check
-                        print ('RUNNING ::  ' + str(index[0]+" /"+str(index[1])))
+                        pass
+                        #print ('RUNNING ::  ' + str(index[0]+" /"+str(index[1])))
                     else:
                         self.read_output(index,row)
                         jobsToRun -= 1
