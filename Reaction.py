@@ -41,9 +41,6 @@ class Reaction(object):
             state.state_print()
 
 
-    def recover_calculation(self):
-        pass
-
 
     def run_calculations(self, options = None):
         ## TODO Change this to only sumbit each molecule once....
@@ -63,15 +60,13 @@ class Reaction(object):
 
 
 
-files = glob.glob("output/*.out") # recturns a list of all the .out files in a directory
-
-
-    def recover_calculations(self):
+    def recover_calculations(self, options = None):
         for state in self.reaction_states:
             for mol in state.madeUpOf:
                 if options:
                     shotgun = Shotgun(mol, state.Type,options[0],options[1])
                 else:
                     shotgun = Shotgun(mol, state.Type)
+
                 self.reaction_results[mol.name] = shotgun.recover(mol)
                 print (self.reaction_results[mol.name])
