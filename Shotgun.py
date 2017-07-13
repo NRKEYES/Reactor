@@ -137,7 +137,7 @@ class Shotgun(object):
 
 
 
-    def read_output(self, index= None, row= None, filename = None):
+    def read_output(self, index, row:
         if filename == None:
             filename = self.directoryName + "/" + self.filename(index, row) + ".out"
             # The else is implicit. Filename will just keep its passed value...
@@ -174,7 +174,7 @@ class Shotgun(object):
                         pass
                         #print ('RUNNING ::  ' + str(index[0]+" /"+str(index[1])))
                     else:
-                        self.read_output(index = index, row = row)
+                        self.read_output(index , row )
                         jobsToRun -= 1
                         runningJobs -= 1
 
@@ -188,11 +188,11 @@ class Shotgun(object):
 
 
     def recover(self, state):
-        print ("Recovering molecular data... " + self.molecule.name)
         searchTerm = self.directoryName +"/*.out"
-        files = glob.glob(searchTerm) # recturns a list of all the .out files in a directory
-        for output in files:
-            self.read_output(filename = output)
+        print ("Recovering molecular data... " + self.molecule.name)
+        #Iterate over DataFrame
+        for index, row in self.results.iterrows():
+            self.read_output(index , row)
         return self.results
 
 
