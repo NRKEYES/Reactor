@@ -145,6 +145,7 @@ class Shotgun(object):
             if self.OptType == "Well" or self.OptType =='TS':
                 if parsed.optdone:
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
+                    self.results.set_value(index,'Job Status', 'Finished')
                 else:
                     self.results.set_value(index,'Energy', np.nan)
             else:
@@ -176,7 +177,6 @@ class Shotgun(object):
                         jobsToRun -= 1
                         runningJobs -= 1
 
-                
                 #Go down dataframe and sumbit empty jobs
                 if runningJobs != self.maxJobs and row['Job Status'] == None:
                     self.submit_job(index, row)
@@ -187,7 +187,6 @@ class Shotgun(object):
 
     def recover(self, state):
         searchTerm = self.directoryName +"/*.out"
-        print ("Recovering molecular data... " + self.molecule.name)
         #Iterate over DataFrame
         for index, row in self.results.iterrows():
             self.read_output(index , row)
@@ -196,6 +195,8 @@ class Shotgun(object):
 
 
     def fire(self, state):
+        print("Rcovering any old molecular data...")
+        self.recover(state)
         print("Firing Calculation")
         print ("---------------------------------------------------------------------------------")
         print ("--------------------------------Entering Submit cycle----------------------------")
