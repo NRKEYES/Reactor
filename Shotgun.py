@@ -136,7 +136,7 @@ class Shotgun(object):
 
     def read_output(self, index, row):
         filename = self.directoryName + "/" + self.filename(index, row) + ".out"
-         myOutput = cclib.ccopen(filename)
+        myOutput = cclib.ccopen(filename)
         try:
             parsed = myOutput.parse()
             if self.OptType == "Well" or self.OptType =='TS':
@@ -149,9 +149,6 @@ class Shotgun(object):
         except:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.!!!!!!!!!!!!!!!!!!!!!!!!")
             print ("Filename: "+ filename)
-       
-        
-            
 
 
 
