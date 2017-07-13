@@ -56,8 +56,11 @@ class Shotgun(object):
         name = str(row['ID'])
         func = str(index[0])
         bs = str(index[1])
-        Optimization  = {'Well': 'TightOpt',
-                            'TS': 'TSOpt'}
+        Optimization  = {'Well': '! TightOpt',
+                            'TS': '! TSOpt'}
+        ## ADD NO OPT option
+
+
         # Read in input template
         with open('input.template','r') as template:
             temp = template.read()
