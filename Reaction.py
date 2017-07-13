@@ -70,7 +70,7 @@ class Reaction(object):
 
     def process_results(self):
         #grab an example key
-        key = next(iter(myReaction.reaction_results))
+        key = next(iter(self.reaction_results))
         #create blank dataFrame with the correct index
         index  =  self.reaction_results[key].index
 
