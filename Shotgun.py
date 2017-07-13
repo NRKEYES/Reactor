@@ -95,6 +95,7 @@ class Shotgun(object):
         self.write_input(index,row)
         #write submit file
         self.write_submit(index,row)
+        time.sleep(5)
         #Submit File
         sub.check_output(['qsub','orca.pbs'])   #submit job
         self.results.set_value(index,'Job Status', 'Running')
@@ -120,13 +121,11 @@ class Shotgun(object):
         filename = self.directoryName + "/" + self.filename(index, row) + ".out"
         print (" The file name is :" + filename)
         myOutput = cclib.ccopen(filename)
-        if myOutput:
+        try:
             parsed = myOutput.parse()
             self.results.set_value(index,'Energy', parsed.scfenergies[-1])
-        else:
+        except:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.")
-        return
-
 
 
     def job_watcher(self):
