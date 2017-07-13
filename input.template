@@ -5,6 +5,11 @@
 $Opt
 
 
+%geom
+      MaxIter 200
+end
+
+
 %coords
 	CTyp = xyz
 	Charge = $Charge
