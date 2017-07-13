@@ -1,19 +1,13 @@
 #!/bin/bash
 
-
 #PBS -l walltime=3:00:00
 #PBS -l nodes=1:ppn=4
-#PBS -N $Name
+#PBS -N $ID
 #PBS -l mem=2000mb
-
 
 cd  "$$PBS_O_WORKDIR"
 
-
-
-
-/opt/local/orca/4.0.0/bin/orca "$InputName" > "$OutputName"
-
+/opt/local/orca/4.0.0/bin/orca $InputName > $OutputName
 
 # All done
 echo Finish: `date`

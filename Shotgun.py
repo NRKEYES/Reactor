@@ -81,13 +81,13 @@ class Shotgun(object):
         except:
             print ("No orca file to delete. Continuing.")
 
-        inputName = str(row['ID'])
+        ID = str(row['ID'])
         outputName = self.filename(index, row)
         #Write Orca Submit File 
         with open('submit.template' , 'r') as template:
             contents = template.read()
             s = Template(contents)
-            substituted = s.substitute( Name = inputName,
+            substituted = s.substitute( ID = ID,
                                         InputName= self.directoryName + '/' + inputName + '.inp',
                                         OutputName = self.directoryName + '/' + outputName + '.out')
         with open('orca.pbs', 'w') as writingFile:
@@ -118,7 +118,7 @@ class Shotgun(object):
         currentCL = sub.Popen(['qstat | grep -c '+ str(row['ID'])], shell = True, stdout = sub.PIPE)
         running, error = currentCL.communicate()
         bRunning = bool(int(running))
-        print (bRunning)
+        #print (bRunning)
         if bRunning: #currently running
             return bRunning
         else:
