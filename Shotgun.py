@@ -158,7 +158,7 @@ class Shotgun(object):
 
 
     def job_watcher(self):
-        jobsToRun = self.size
+        jobsToRun = self.size-self.results['Energy'].isnull().sum
         runningJobs = 0
         #Which Molecule are we running calculation for?
         self.molecule.molecule_print()
