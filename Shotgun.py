@@ -76,6 +76,11 @@ class Shotgun(object):
 
 
     def write_submit(self, index, row):
+        try:
+            os.remove('orca.pbs')
+        except:
+            print ("No orca file to delete. Continuing.")
+
         inputName = str(row['ID'])
         outputName = self.filename(index, row)
         #Write Orca Submit File 
