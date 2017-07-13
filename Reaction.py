@@ -72,13 +72,13 @@ class Reaction(object):
         #grab an example key
         key = next(iter(myReaction.reaction_results))
         #create blank dataFrame with the correct index
-        index  =  myReaction.reaction_results[key].index
+        index  =  self.reaction_results[key].index
 
         cleanData = pd.DataFrame(index = index)
-        for state in myReaction.reaction_states:
+        for state in self.reaction_states:
             tempEnergy = pd.DataFrame(index = index)
             tempEnergy[state.key] = 0
 
             for mol in state.madeUpOf:
-                tempEnergy[state.key] =  tempEnergy[state.key] + myReaction.reaction_results[mol.name]["Energy"]
+                tempEnergy[state.key] =  tempEnergy[state.key] + self.reaction_results[mol.name]["Energy"]
             cleanData[state.key] = tempEnergy[state.key]
