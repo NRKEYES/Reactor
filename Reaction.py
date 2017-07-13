@@ -15,6 +15,8 @@ from timeit import default_timer as timer
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
+        self.reactionBase = ''
+
         self.reaction_states = []
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
@@ -22,6 +24,7 @@ class Reaction(object):
         try:
             with open(JSON_File) as file:
                 parsed_data = json.load(file)
+                self.reactionBase = parsed_data['Base']
         except:
             print("JSON FILE ERROR")
             sys.exit()
@@ -67,3 +70,9 @@ class Reaction(object):
 
                 self.reaction_results[mol.name] = shotgun.recover(mol)
                 print (self.reaction_results[mol.name])
+
+    def process_results(self):
+        cleanData = pd.Dat
+
+
+        pass
