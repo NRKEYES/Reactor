@@ -113,6 +113,8 @@ class Shotgun(object):
         sub.check_output(['qsub','orca.pbs'])   #submit job
         self.results.set_value(index,'Job Status', 'Running')
 
+
+
     def cleanup(self, index, row):
         # TODO
         # Remove non output files after finishing job
@@ -163,7 +165,7 @@ class Shotgun(object):
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
             time.sleep(10)
-            print("\" + str(jobsToRun), end = '')
+            print("/" + str(jobsToRun), end = '')
             #Iterate over DataFrame
             for index, row in self.results.iterrows():
                 if row['Job Status'] == 'Running':
