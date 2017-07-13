@@ -6,7 +6,6 @@ from Shotgun import Shotgun
 import json
 import time
 import sys
-import glob
 import os
 
 import numpy as np
