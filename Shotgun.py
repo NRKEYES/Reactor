@@ -106,6 +106,10 @@ class Shotgun(object):
         sub.check_output(['qsub','orca.pbs'])   #submit job
         self.results.set_value(index,'Job Status', 'Running')
 
+    def cleanup(self, index, row):
+        # TODO
+        # Remove non output files after finishing job
+        pass
 
 
     def check_running(self, index, row):
@@ -153,9 +157,9 @@ class Shotgun(object):
                         jobsToRun -= 1
                         runningJobs -= 1
 
-
+                
                 #Go down dataframe and sumbit empty jobs
-                if runningJobs != self.maxJobs:
+                if runningJobs != self.maxJobs $$ row['Job Status'] == None:
                     self.submit_job(index, row)
                     print(str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
