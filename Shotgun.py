@@ -161,7 +161,7 @@ class Shotgun(object):
         # Main Loop: Run until all jobs are finished.
         while jobsToRun != 0:
             time.sleep(10)
-            print("Remaining Jobs: " + str(jobsToRun), end = '')
+            print("\" + str(jobsToRun), end = '')
             #Iterate over DataFrame
             for index, row in self.results.iterrows():
                 if row['Job Status'] == 'Running':
@@ -177,7 +177,7 @@ class Shotgun(object):
                 #Go down dataframe and sumbit empty jobs
                 if runningJobs != self.maxJobs and row['Job Status'] == None:
                     self.submit_job(index, row)
-                    print(str(index)+":"+ str(row['Job Status']))
+                    print("\n"+str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
 
 
