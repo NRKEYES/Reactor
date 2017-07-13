@@ -12,8 +12,6 @@ import cclib
 import numpy as np
 import pandas as pd
 
-
-
 class Shotgun(object):
     def __init__(self, molecule, OptType ,functional = ["B3LYP"], basisSet = ["6-311G"]):
 
@@ -164,7 +162,7 @@ class Shotgun(object):
         #Remove anywork files that exist
         try:
             for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
-            os.remove(file)
+                os.remove(file)
 
 
 
