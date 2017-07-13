@@ -246,7 +246,7 @@
 		},
 
 		"7.2" : {
-		"MadeUpOf" : ["5MnOH+","H"],
+		"MadeUpOf" : ["6MnOH+","H"],
 		"ComesFrom" : [6.0],
 		"GoesTo" :  [],
 		"Type" : "Well"
