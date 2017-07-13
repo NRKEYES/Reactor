@@ -85,9 +85,10 @@ class Shotgun(object):
             substituted = s.substitute( Name = inputName,
                                         InputName= self.directoryName + '/' + inputName + '.inp',
                                         OutputName = self.directoryName + '/' + outputName + '.out')
-            with open('orca.pbs', 'w') as writingFile:
-                writingFile.write(substituted)
-
+        with open('orca.pbs', 'w') as writingFile:
+            writingFile.write(substituted)
+        time.sleep(1)
+        return
 
 
     def submit_job(self, index, row):
