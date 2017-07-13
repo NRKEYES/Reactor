@@ -2,7 +2,6 @@ from random import randint
 from State import State
 from Shotgun import Shotgun
 
-
 import json
 import time
 import sys
@@ -70,7 +69,16 @@ class Reaction(object):
                 print (self.reaction_results[mol.name])
 
     def process_results(self):
-        cleanData = pd.Dat
+        #grab an example key
+        key = next(iter(myReaction.reaction_results))
+        #create blank dataFrame with the correct index
+        index  =  myReaction.reaction_results[key].index
 
+        cleanData = pd.DataFrame(index = index)
+        for state in myReaction.reaction_states:
+            tempEnergy = pd.DataFrame(index = index)
+            tempEnergy[state.key] = 0
 
-        pass
+            for mol in state.madeUpOf:
+                tempEnergy[state.key] =  tempEnergy[state.key] + myReaction.reaction_results[mol.name]["Energy"]
+            cleanData[state.key] = tempEnergy[state.key]
