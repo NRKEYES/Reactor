@@ -158,7 +158,7 @@ class Shotgun(object):
 
 
     def job_watcher(self):
-        print (self.results['Energy'].isnull().sum())
+        print (self.results['Energy'].count())
         jobsToRun = self.size-self.results['Energy'].isnull().sum()
         runningJobs = 0
         #Which Molecule are we running calculation for?
@@ -179,7 +179,7 @@ class Shotgun(object):
                         runningJobs -= 1
 
                 #Go down dataframe and sumbit empty jobs
-                if runningJobs != self.maxJobs and row['Job Status'] == None:
+                if runningJobs != self.maxJobs and row['Job Status'] is None:
                     self.submit_job(index, row)
                     print("\n"+str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
