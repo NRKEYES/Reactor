@@ -163,7 +163,8 @@ class Shotgun(object):
         try:
             for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
                 os.remove(file)
-
+        except:
+            pass
 
 
     def job_watcher(self):
