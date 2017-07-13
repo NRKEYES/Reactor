@@ -11,4 +11,3 @@ cd  "$$PBS_O_WORKDIR"
 
 # All done
 echo Finish: `date`
-------------------------

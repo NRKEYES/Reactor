@@ -16,6 +16,7 @@ import pandas as pd
 class Shotgun(object):
     def __init__(self, molecule, OptType ,functional = ["B3LYP"], basisSet = ["6-311G"]):
         self.OptType = OptType
+        if
         #pull out data from state for conveinence?????
         self.molecule = molecule
         #Create Directory for this molecule
@@ -57,7 +58,7 @@ class Shotgun(object):
         func = str(index[0])
         bs = str(index[1])
         Optimization  = {'Well': '! TightOpt',
-                            'TS': '! TSOpt'}
+                            'TS': '! OptTS'}
         ## ADD NO OPT option
 
 
