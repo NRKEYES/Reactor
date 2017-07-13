@@ -109,7 +109,6 @@ class Shotgun(object):
         self.write_input(index,row)
         #write submit file
         self.write_submit(index,row)
-        time.sleep(5)
         #Submit File
         sub.check_output(['qsub','orca.pbs'])   #submit job
         self.results.set_value(index,'Job Status', 'Running')
@@ -176,13 +175,11 @@ class Shotgun(object):
 
     def fire(self, state):
         print("Firing Calculation")
-        print ("--------------------------------------------------------------------------------------------")
-        print ("--------------------------------Entering Submit cycle---------------------------------------")
-        print ("--------------------------------------------------------------------------------------------")
+        print ("---------------------------------------------------------------------------------")
+        print ("--------------------------------Entering Submit cycle----------------------------")
+        print ("---------------------------------------------------------------------------------")
         start = timer()
         self.job_watcher()
         end = timer()
         print ("Total Time : " + str(end-start))
-        print ("-----------------------Results")
-        print (self.results)
         return self.results
