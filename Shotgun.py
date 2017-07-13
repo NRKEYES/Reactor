@@ -192,7 +192,7 @@ class Shotgun(object):
         searchTerm = self.directoryName +"/*.out"
         files = glob.glob(searchTerm) # recturns a list of all the .out files in a directory
         for output in files:
-            self.read_output(filename = ouput)
+            self.read_output(filename = output)
         return self.results
 
 
