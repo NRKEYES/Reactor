@@ -159,7 +159,7 @@ class Shotgun(object):
 
                 
                 #Go down dataframe and sumbit empty jobs
-                if runningJobs != self.maxJobs $$ row['Job Status'] == None:
+                if runningJobs != self.maxJobs and row['Job Status'] == None:
                     self.submit_job(index, row)
                     print(str(index)+":"+ str(row['Job Status']))
                     runningJobs += 1
