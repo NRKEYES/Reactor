@@ -137,10 +137,8 @@ class Shotgun(object):
 
 
 
-    def read_output(self, index, row:
-        if filename == None:
-            filename = self.directoryName + "/" + self.filename(index, row) + ".out"
-            # The else is implicit. Filename will just keep its passed value...
+    def read_output(self, index, row):
+        filename = self.directoryName + "/" + self.filename(index, row) + ".out"
         myOutput = cclib.ccopen(filename)
         try:
             parsed = myOutput.parse()
