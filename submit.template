@@ -7,7 +7,7 @@
 
 cd  "$$PBS_O_WORKDIR"
 
-/opt/local/orca/4.0.0/bin/orca $InputName > $OutputName
+/opt/local/orca/4.0.0/bin/orca "$InputName" > "$OutputName"
 
 # All done
 echo Finish: `date`
