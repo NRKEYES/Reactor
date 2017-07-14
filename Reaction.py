@@ -85,8 +85,8 @@ class Reaction(object):
                 tempEnergy[state.key] =  tempEnergy[state.key] + self.reaction_results[mol.name]["Energy"]
             cleanData[state.key] = tempEnergy[state.key]
 
-        base = pd.DataFrame.copy(clean[str(myReaction.reactionBase)])
+        base = pd.DataFrame.copy(cleanData[str(myReaction.reactionBase)])
         for state in myReaction.reaction_states:
-            cleanData[state.key] = base-clean[state.key]
+            cleanData[state.key] = base-cleanData[state.key]
 
         return cleanData
