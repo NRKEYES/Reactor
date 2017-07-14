@@ -68,6 +68,8 @@ class Reaction(object):
                 self.reaction_results[mol.name] = shotgun.recover(mol)
                 print (self.reaction_results[mol.name])
 
+
+
     def process_results(self):
         #grab an example key
         key = next(iter(self.reaction_results))
@@ -82,4 +84,9 @@ class Reaction(object):
             for mol in state.madeUpOf:
                 tempEnergy[state.key] =  tempEnergy[state.key] + self.reaction_results[mol.name]["Energy"]
             cleanData[state.key] = tempEnergy[state.key]
+
+        base = pd.DataFrame.copy(clean[str(myReaction.reactionBase)])
+        for state in myReaction.reaction_states:
+            cleanData[state.key] = base-clean[state.key]
+
         return cleanData
