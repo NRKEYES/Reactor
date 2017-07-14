@@ -87,6 +87,10 @@ class Reaction(object):
 
         base = pd.DataFrame.copy(cleanData[str(self.reactionBase)])
         for state in self.reaction_states:
-            cleanData[state.key] = base-cleanData[state.key]
+            cleanData[state.key] = cleanData[state.key]-base
 
         return cleanData
+
+
+    def subway_graphs(self):
+        pass
