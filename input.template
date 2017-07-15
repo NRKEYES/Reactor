@@ -5,8 +5,6 @@
 $Opt
 
 %geom
-
-%geom
 	MaxIter 200
 	Calc_Hess true # Calculate Hessian in the beginning
 	NumHess true # Request numerical Hessian (analytical not available)
