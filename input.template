@@ -4,9 +4,13 @@
 ! $Basis
 $Opt
 
+%geom
 
 %geom
-      MaxIter 200
+	MaxIter 200
+	Calc_Hess true # Calculate Hessian in the beginning
+	NumHess true # Request numerical Hessian (analytical not available)
+	Recalc_Hess 5  # Recalculate the Hessian every 5 steps
 end
 
 
