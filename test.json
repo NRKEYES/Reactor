@@ -160,13 +160,13 @@
 		"2.0" : {
 		"MadeUpOf" : ["Well-1-5"],
 		"ComesFrom" : [1.0],
-		"GoesTo" :  [2.0],
+		"GoesTo" :  [3.0],
 		"Type" : "Well"
 		},
 		"2.1" : {
 		"MadeUpOf" : ["Well-1-7"],
 		"ComesFrom" : [1.1],
-		"GoesTo" :  [2.1],
+		"GoesTo" :  [3.1],
 		"Type" : "Well"
 		},
 
