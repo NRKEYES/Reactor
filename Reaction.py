@@ -14,7 +14,7 @@ from timeit import default_timer as timer
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
-        self.reaction_states = []
+        self.reaction_states = {}
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
         # Open up the JSON File and quit program if FAIL
@@ -27,7 +27,7 @@ class Reaction(object):
             sys.exit()
         #Create States
         for key, state in zip(parsed_data['States'].keys(),parsed_data['States']):
-            self.reaction_states.append(State(parsed_data,key))
+            self.reaction_states[key]= State(parsed_data,key))
 
 
         #Create Tree of states _____THIS PART CAN WAIT____
