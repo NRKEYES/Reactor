@@ -34,8 +34,8 @@ class Reaction(object):
 
         
     def reaction_print(self):
-        for state in self.reaction_states:
-            state.state_print()
+        for key, value in self.reaction_states:
+            value.state_print()
 
 
 
