@@ -34,14 +34,14 @@ class Reaction(object):
 
         
     def reaction_print(self):
-        for key, value in self.reaction_states.items():
-            value.state_print()
+        for key, state in self.reaction_states.items():
+            state.state_print()
 
 
 
     def run_calculations(self, options = None):
         ## TODO Change this to only sumbit each molecule once....
-        for state in self.reaction_states:
+        for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
                 print ("Running Molecule: " + mol.name)
                 # maybe just pass default values, but I would maybe refractor
@@ -58,7 +58,7 @@ class Reaction(object):
 
 
     def recover_calculations(self, options = None):
-        for state in self.reaction_states:
+        for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
                 if options:
                     shotgun = Shotgun(mol, state.Type,options[0],options[1])
@@ -77,7 +77,7 @@ class Reaction(object):
         index  =  self.reaction_results[key].index
 
         cleanData = pd.DataFrame(index = index)
-        for state in self.reaction_states:
+        for key, state in self.reaction_states.items():
             tempEnergy = pd.DataFrame(index = index)
             tempEnergy[state.key] = 0
 
@@ -86,7 +86,7 @@ class Reaction(object):
             cleanData[state.key] = tempEnergy[state.key]
 
         base = pd.DataFrame.copy(cleanData[str(self.reactionBase)])
-        for state in self.reaction_states:
+        for key, state in self.reaction_states.items():
             cleanData[state.key] = cleanData[state.key]-base
 
         return cleanData
