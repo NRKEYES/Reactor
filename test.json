@@ -226,7 +226,7 @@
 		"6.1" : {
 		"MadeUpOf" : ["Well-3-7"],
 		"ComesFrom" : [5.1],
-		"GoesTo" :  [7.1,7.3],
+		"GoesTo" :  [7.1],
 		"Type" : "Well"
 		},
 
