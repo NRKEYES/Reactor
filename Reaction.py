@@ -27,7 +27,7 @@ class Reaction(object):
             sys.exit()
         #Create States
         for key, state in zip(parsed_data['States'].keys(),parsed_data['States']):
-            self.reaction_states[key]= State(parsed_data,key))
+            self.reaction_states[key]= State(parsed_data,key)
 
 
         #Create Tree of states _____THIS PART CAN WAIT____
