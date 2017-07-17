@@ -28,7 +28,6 @@ class Reaction(object):
         
         self.deltas = parsed_data['Deltas']
         
-        
         #Create States
         for key, state in zip(parsed_data['States'].keys(),parsed_data['States']):
             self.reaction_states[key]= State(parsed_data,key)
