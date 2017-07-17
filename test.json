@@ -190,7 +190,7 @@
 		"4.0" : {
 		"MadeUpOf" : ["Well-2-5"],
 		"ComesFrom" : [3.0],
-		"GoesTo" :  [5.0],
+		"GoesTo" :  [5.0,5.2],
 		"Type" : "Well"
 		},
 		"4.1" : {
@@ -220,7 +220,7 @@
 		"6.0" : {
 		"MadeUpOf" : ["Well-3-5"],
 		"ComesFrom" : [5.0],
-		"GoesTo" :  [7.0,7.2],
+		"GoesTo" :  [7.0],
 		"Type" : "Well"
 		},
 		"6.1" : {
@@ -245,9 +245,9 @@
 		"Type" : "Well"
 		},
 
-		"7.2" : {
+		"5.2" : {
 		"MadeUpOf" : ["6MnOH+","H"],
-		"ComesFrom" : [6.0],
+		"ComesFrom" : [4.0],
 		"GoesTo" :  [],
 		"Type" : "Well"
 		}
