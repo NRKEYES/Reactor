@@ -5,7 +5,8 @@
 $Opt
 
 
-! Grid6 NoFinalGrid6
+! Grid6 FinalGrid9
+
 %pal nprocs 4
 end
 
