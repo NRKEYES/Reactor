@@ -14,7 +14,7 @@ from timeit import default_timer as timer
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
-        self.fileName = JSON_File
+        self.fileName = JSON_File - '.JSON'
         self.reaction_states = {}
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
