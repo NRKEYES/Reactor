@@ -153,6 +153,7 @@ class Shotgun(object):
                 if parsed.optdone:
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
                     self.results.set_value(index,'Job Status', 'Finished')
+                    self.results.set_value(index, 'Freq', parsed.vibfreqs)
                     # If energy is found, then delete error files
                     try:
                         for file in glob.glob(str(row['ID'])):
