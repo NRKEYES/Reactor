@@ -4,6 +4,16 @@
 ! $Basis
 $Opt
 
+
+! Grid6 NoFinalGrid6
+%pal nprocs 4
+end
+
+%scf
+	CNVSOSCF true
+	maxiter 1000
+end
+
 %geom
 	MaxIter 200
 	Calc_Hess true # Calculate Hessian in the beginning
