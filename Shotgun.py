@@ -151,7 +151,6 @@ class Shotgun(object):
         myOutput = cclib.ccopen(filename)
         try:
             parsed = myOutput.parse()
-            print (parsed.vibfreqs)
             if self.OptType == "Well" or self.OptType =='TS': # if opt was performed, check for completion
 
                 if parsed.optdone: #Checking for completion
