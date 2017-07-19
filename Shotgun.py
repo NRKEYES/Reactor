@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 
 class Shotgun(object):
-    def __init__(self, molecule, OptType ,functional = ["B3LYP"], basisSet = ["6-311G"]):
+    def __init__(self, molecule, OptType ,directoryName = 'Output', functional = ["B3LYP"], basisSet = ["6-311G"]):
 
         if len(molecule.xyz) > 1:
             self.OptType = OptType
@@ -22,7 +22,7 @@ class Shotgun(object):
         #pull out data from state for conveinence?????
         self.molecule = molecule
         #Create Directory for this molecule
-        self.directoryName = str(molecule.name)
+        self.directoryName = directoryName+'/'+str(molecule.name)+
         if not os.path.exists(self.directoryName):
             os.makedirs(self.directoryName)
         
@@ -59,8 +59,8 @@ class Shotgun(object):
         name = str(row['ID'])
         func = str(index[0])
         bs = str(index[1])
-        Optimization  = {'Well': '! TightOpt',
-                            'TS': '! OptTS',
+        Optimization  = {'Well': '! TightOpt Freq',
+                            'TS': '! OptTS Freq',
                             'NoOpt': ''}
         ## ADD NO OPT option
 
@@ -103,6 +103,7 @@ class Shotgun(object):
         return
 
 
+
     def submit_job(self, index, row):
         #write input file
         self.write_input(index,row)
@@ -132,6 +133,11 @@ class Shotgun(object):
         else:
             self.results.set_value(index,'Job Status', 'Finished')
             return bRunning
+
+
+
+    def get_ZPE(self):
+        pass
 
 
 

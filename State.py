@@ -9,7 +9,7 @@ class State(object):
         
         self.goesTo = JSON_data['States'][key]['GoesTo']
         
-        self.Type = JSON_data['States'][key]['Type']
+        self.type = JSON_data['States'][key]['Type']
         
         for mol in JSON_data['States'][key]['MadeUpOf']:
             self.madeUpOf.append(Molecule(JSON_data['Molecules'][mol],mol))
@@ -28,5 +28,5 @@ class State(object):
         for product in self.goesTo:
             print (product) 
             
-        print ("Type: " + str(self.Type))
+        print ("Type: " + str(self.type))
 

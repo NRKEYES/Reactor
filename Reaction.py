@@ -14,12 +14,13 @@ from timeit import default_timer as timer
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
+        self.fileName = JSON_File
         self.reaction_states = {}
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
         # Open up the JSON File and quit program if FAIL
         try:
-            with open(JSON_File) as file:
+            with open(self.fileName) as file:
                 parsed_data = json.load(file)
                 self.reactionBase = parsed_data['Base']
         except:
@@ -50,9 +51,9 @@ class Reaction(object):
                 # maybe just pass default values, but I would maybe refractor
                 #  the SHOTGUN CLASS TO EXPECT a LIST
                 if options:
-                    shotgun = Shotgun(mol, state.Type,options[0],options[1])
+                    shotgun = Shotgun(mol, state.type , directoryName = self.fileName, functional = options[0], basisSet =options[1])
                 else:
-                    shotgun = Shotgun(mol, state.Type)
+                    shotgun = Shotgun(mol, state.type, directoryName = self.fileName)
                 # Add to list of results:
                 self.reaction_results[mol.name] = shotgun.fire(mol)
                 print (self.reaction_results[mol.name])
@@ -64,9 +65,9 @@ class Reaction(object):
         for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
                 if options:
-                    shotgun = Shotgun(mol, state.Type,options[0],options[1])
+                    shotgun = Shotgun(mol, state.type , directoryName = self.fileName,functional = options[0], basisSet =options[1])
                 else:
-                    shotgun = Shotgun(mol, state.Type)
+                    shotgun = Shotgun(mol, state.type , directoryName = self.fileName)
 
                 self.reaction_results[mol.name] = shotgun.recover(mol)
                 print (self.reaction_results[mol.name])
