@@ -43,6 +43,7 @@ class Shotgun(object):
         self.results['Job Status'] =  None
         self.results['Energy'] = np.nan
         self.results['Run Time'] = np.nan
+        self.results['Freq'] = []
         
         if self.size > 10:
             self.maxJobs = 10
