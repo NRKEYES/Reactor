@@ -5,6 +5,10 @@
 #PBS -N $ID
 #PBS -l mem=8000mb
 
+
+module load orca/4.0.0
+module load openmpi/1.10.0/gcc/4.8.3
+
 cd  "$$PBS_O_WORKDIR"
 
 /opt/local/orca/4.0.0/bin/orca "$InputName" > "$OutputName"
