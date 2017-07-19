@@ -43,7 +43,7 @@ class Shotgun(object):
         self.results['Job Status'] =  None
         self.results['Energy'] = np.nan
         self.results['Run Time'] = np.nan
-        self.results['Freq'] = self.results['freq'].astype(object) # should let me insert lists
+        self.results['Freq'] = self.results['Freq'].astype(object) # should let me insert lists
         
         if self.size > 10:
             self.maxJobs = 10
