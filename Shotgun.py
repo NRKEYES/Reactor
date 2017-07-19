@@ -24,7 +24,7 @@ class Shotgun(object):
         #Create Directory for this molecule
         self.directoryName = directoryName + '/'+str(molecule.name)
         print (self.directoryName)
-        
+
         if not os.path.exists(self.directoryName):
             os.makedirs(self.directoryName)
         
@@ -61,8 +61,8 @@ class Shotgun(object):
         name = str(row['ID'])
         func = str(index[0])
         bs = str(index[1])
-        Optimization  = {'Well': '! TightOpt Freq',
-                            'TS': '! OptTS Freq',
+        Optimization  = {'Well': '! TightOpt NumFreq',
+                            'TS': '! OptTS NumFreq',
                             'NoOpt': ''}
         ## ADD NO OPT option
 
