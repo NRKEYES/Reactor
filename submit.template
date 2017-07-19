@@ -6,6 +6,10 @@
 #PBS -l mem=8000mb
 
 
+
+export RSH_COMMAND="ssh"
+source /etc/profile.d/modules.sh
+
 module load orca
 export ORCA_EXEC=$$(which orca)
 
