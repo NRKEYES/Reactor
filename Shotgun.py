@@ -149,6 +149,7 @@ class Shotgun(object):
         myOutput = cclib.ccopen(filename)
         try:
             parsed = myOutput.parse()
+            print (parsed.vibfreqs)
             if self.OptType == "Well" or self.OptType =='TS':
                 if parsed.optdone:
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
