@@ -14,13 +14,13 @@ from timeit import default_timer as timer
 
 class Reaction(object):
     def __init__(self, JSON_File = ''):
-        self.fileName = JSON_File +'.json'
+        self.fileName = JSON_File
         self.reaction_states = {}
         ## Reaction reasults as a dictionary with states as KEY, and results dataframe as VALUE
         self.reaction_results= {}
         # Open up the JSON File and quit program if FAIL
         try:
-            with open(self.fileName) as file:
+            with open(self.fileName+'.json') as file:
                 parsed_data = json.load(file)
                 self.reactionBase = parsed_data['Base']
         except:
