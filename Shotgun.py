@@ -46,7 +46,7 @@ class Shotgun(object):
         self.results['Freq'] = np.nan # should let me insert lists
         self.results['Freq'] = self.results['Freq'].astype(object)
 
-        
+
         if self.size > 10:
             self.maxJobs = 10
         else:
@@ -152,11 +152,13 @@ class Shotgun(object):
         try:
             parsed = myOutput.parse()
             print (parsed.vibfreqs)
-            if self.OptType == "Well" or self.OptType =='TS':
-                if parsed.optdone:
+            if self.OptType == "Well" or self.OptType =='TS': # if opt was performed, check for completion
+
+                if parsed.optdone: #Checking for completion
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
                     self.results.set_value(index,'Job Status', 'Finished')
                     self.results.set_value(index, 'Freq', parsed.vibfreqs)
+
                     # If energy is found, then delete error files
                     try:
                         for file in glob.glob(str(row['ID'])):
@@ -165,9 +167,9 @@ class Shotgun(object):
                             os.remove(file)
                     except:
                         print ("No orca file to delete. Continuing.")
-                else:
+                else: # Opt failed, ignore energy value. it is mostly nonsense
                     self.results.set_value(index,'Energy', np.nan)
-            else:
+            else: # no opt, just set energy value 
                 self.results.set_value(index,'Energy', parsed.scfenergies[-1])
         except:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -177,7 +179,7 @@ class Shotgun(object):
             for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
                 os.remove(file)
         except:
-            pass
+             print ("No orca file to delete. Continuing.")
 
 
     def job_watcher(self):
