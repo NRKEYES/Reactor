@@ -4,7 +4,17 @@
 ! $Basis
 $Opt
 
+%geom
+	MaxIter 200
+	Calc_Hess true # Calculate Hessian in the beginning
+	NumHess true # Request numerical Hessian (analytical not available)
+	Recalc_Hess 5  # Recalculate the Hessian every 5 steps
+end
 
+%scf 
+MaxIter 300     # Here setting MaxIter to a very high number. Intended for systems that require sometimes 1000 iterations before converging (very rare).
+DIISMaxEq 15  # Default value is 5. A value of 15-40 necessary for difficult systems.
+end
 
 
 %coords
