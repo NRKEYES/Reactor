@@ -22,7 +22,7 @@ class Shotgun(object):
         #pull out data from state for conveinence?????
         self.molecule = molecule
         #Create Directory for this molecule
-        self.directoryName = directoryName+'/'+str(molecule.name)+
+        self.directoryName = directoryName + '/'+str(molecule.name)
         if not os.path.exists(self.directoryName):
             os.makedirs(self.directoryName)
         
