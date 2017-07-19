@@ -23,6 +23,8 @@ class Shotgun(object):
         self.molecule = molecule
         #Create Directory for this molecule
         self.directoryName = directoryName + '/'+str(molecule.name)
+        print (self.directoryName)
+        
         if not os.path.exists(self.directoryName):
             os.makedirs(self.directoryName)
         
@@ -165,7 +167,7 @@ class Shotgun(object):
         except:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.!!!!!!!!!!!!!!!!!!!!!!!!")
             print ("Filename: "+ filename)
-        #Remove anywork files that exist
+        #Remove any work files that exist
         try:
             for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
                 os.remove(file)
