@@ -114,7 +114,7 @@ def get_Rotational_Constant(form,Inert):
         Inert = Inert/NA/1000*1e-20 ;
         RC = h/8/pi/pi/Inert/clight/100 ; # cm-1
     else:
-        RC = ''
+        RC = 0.0
     return RC
 
 
