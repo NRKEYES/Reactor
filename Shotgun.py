@@ -12,6 +12,10 @@ import cclib
 import numpy as np
 import pandas as pd
 
+
+import Rotation_Constants
+
+
 class Shotgun(object):
     def __init__(self, molecule, OptType ,directoryName = 'Output', functional = ["B3LYP"], basisSet = ["6-311G"]):
 
@@ -45,6 +49,8 @@ class Shotgun(object):
         self.results['Run Time'] = np.nan
         self.results['Freq'] = np.nan # should let me insert lists
         self.results['Freq'] = self.results['Freq'].astype(object)
+        self.results['RC'] = np.nan # should let me insert lists
+        self.results['RC'] = self.results['RC'].astype(object)
 
 
         if self.size > 10:
@@ -157,6 +163,7 @@ class Shotgun(object):
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
                     self.results.set_value(index,'Job Status', 'Finished')
                     self.results.set_value(index, 'Freq', parsed.vibfreqs)
+                    self.results.set_value(index, 'Freq', Rotation_Constants.rotation(filename))
 
                     # If energy is found, then delete error files
                     try:
