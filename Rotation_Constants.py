@@ -173,7 +173,7 @@ def rotation(file):
     Inertia['y'] = eigenValues[1]
     Inertia['z'] = eigenValues[0]
     
-    result = pd.Series([0.0,0.0,0.0])
+    result = np.array([0.0,0.0,0.0])
     
     # These are the values I actually want.
     result[0] = get_Rotational_Constant(1,Inertia['x'])
