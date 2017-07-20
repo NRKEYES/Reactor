@@ -114,7 +114,7 @@ def get_Rotational_Constant(form,Inert):
         Inert = Inert/NA/1000*1e-20 ;
         RC = h/8/pi/pi/Inert/clight/100 ; # cm-1
     else:
-        RC = 1000000
+        RC = ''
     return RC
 
 
@@ -182,5 +182,3 @@ def rotation(file):
 
     return result
 
-test = rotation('MnD/6MnOH+/M066-31++G**6MnOH+.out')
-test
