@@ -163,7 +163,7 @@ class Shotgun(object):
                     self.results.set_value(index,'Energy', parsed.scfenergies[-1])
                     self.results.set_value(index,'Job Status', 'Finished')
                     self.results.set_value(index, 'Freq', parsed.vibfreqs)
-                    self.results.set_value(index, 'Freq', Rotation_Constants.rotation(filename))
+                    self.results.set_value(index, 'RC', Rotation_Constants.rotation(filename))
 
                     # If energy is found, then delete error files
                     try:
