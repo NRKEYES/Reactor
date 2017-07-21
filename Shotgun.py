@@ -72,9 +72,8 @@ class Shotgun(object):
         bs = str(index[1])
         Optimization  = {'Well': '! TightOpt NumFreq',
                             'TS': '! OptTS NumFreq',
-                            'NoOpt': ''}
-                            'freqOnly': '! Freq'
-        ## ADD NO OPT option
+                            'NoOpt': '',
+                            'freqOnly': '! Freq'}
 
 
         # Read in input template
