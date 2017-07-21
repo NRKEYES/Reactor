@@ -111,7 +111,7 @@ class Reaction(object):
         
         directoryName = self.fileName + '/'+str(mol.name)
         
-        outputFile = directoryName + '/' + outputName + '.out')
+        outputFile = directoryName + '/' + outputName + '.out'
         return outputFile
 
 
