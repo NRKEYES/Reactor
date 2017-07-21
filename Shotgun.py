@@ -7,6 +7,7 @@ import time
 import glob
 import sys
 import os
+import re
 import cclib
 
 import numpy as np
@@ -62,6 +63,7 @@ class Shotgun(object):
 
     def filename(self, index, row):
         name = str(index[0]) + str(index[1]) + str(self.molecule.name)
+        name =re.sub('[^A-Za-z0-9]+', '', name)
         return name
 
 
