@@ -67,7 +67,6 @@ def connectLines(index, xSpacing = 5, stateSize = 2 ):
 
 
 
-
 def subway_graph(index):
 
     xSpacing = 6
@@ -128,3 +127,41 @@ for index, row in kJ.iterrows():
     except:
         pass
     #break # to limit to one graph while troubleshooting
+
+
+
+
+
+def produce_excel():
+    # Create a Pandas Excel writer using XlsxWriter as the engine.
+    writer = pd.ExcelWriter(str(myReaction.fileName)+'.xlsx', engine='xlsxwriter')
+    
+    #grab an example key
+    key = next(iter(myReaction.reaction_results))
+    #create blank dataFrame with the correct index
+    index  =  myReaction.reaction_results[key].index
+    cleanData = pd.DataFrame(index = index)
+    
+    
+    for key, state in myReaction.reaction_states.items():
+        tempEnergy = pd.DataFrame(index = index)
+        tempEnergy[state.key] = 0
+
+        for mol in state.madeUpOf:
+            tempEnergy[mol.name + ' RC in cm^-1'] = myReaction.reaction_results[mol.name]["RC"]
+            
+            tempEnergy[state.key] =  tempEnergy[state.key] + myReaction.reaction_results[mol.name]["Energy"]
+            
+            tempEnergy[mol.name + 'Freq'] = myReaction.reaction_results[mol.name]["Freq"]
+            
+        cleanData[state.key] = tempEnergy[state.key]
+        base = pd.DataFrame.copy(cleanData[str(myReaction.reactionBase)])
+        tempEnergy[state.key] = (tempEnergy[state.key]-base)*(96.48)
+        
+        # Convert the dataframe to an XlsxWriter Excel object.
+        tempEnergy.to_excel(writer, sheet_name=state.key)
+
+        
+        
+    # Close the Pandas Excel writer and output the Excel file.
+    writer.save()
