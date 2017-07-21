@@ -6,6 +6,7 @@ import json
 import time
 import sys
 import os
+import re
 
 import numpy as np
 import pandas as pd
@@ -21,17 +22,17 @@ class Reaction(object):
         # Open up the JSON File and quit program if FAIL
         try:
             with open(self.fileName+'.json') as file:
-                parsed_data = json.load(file)
-                self.reactionBase = parsed_data['Base']
+                self.parsedJSON = json.load(file)
+                self.reactionBase = self.parsedJSON['Base']
         except:
             print("JSON FILE ERROR")
             sys.exit()
         
-        self.deltas = parsed_data['Deltas'] 
+        self.deltas = self.parsedJSON['Deltas'] 
         
         #Create States
-        for key, state in zip(parsed_data['States'].keys(),parsed_data['States']):
-            self.reaction_states[key]= State(parsed_data,key)
+        for key, state in zip(self.parsedJSON['States'].keys(),self.parsedJSON['States']):
+            self.reaction_states[key]= State(self.parsedJSON,key)
 
 
         #Create Tree of states _____THIS PART CAN WAIT____
@@ -43,17 +44,14 @@ class Reaction(object):
 
 
 
-    def run_calculations(self, options = None):
+    def run_calculations(self, options = ['B3LYP','TVDZ']):
         ## TODO Change this to only sumbit each molecule once....
         for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
                 print ("Running Molecule: " + mol.name)
-                # maybe just pass default values, but I would maybe refractor
-                #  the SHOTGUN CLASS TO EXPECT a LIST
-                if options:
-                    shotgun = Shotgun(mol, state.type , directoryName = self.fileName, functional = options[0], basisSet =options[1])
-                else:
-                    shotgun = Shotgun(mol, state.type, directoryName = self.fileName)
+
+                shotgun = Shotgun(mol, state.type , directoryName = self.fileName, functional = options[0], basisSet =options[1])
+
                 # Add to list of results:
                 self.reaction_results[mol.name] = shotgun.fire(mol)
                 print (self.reaction_results[mol.name])
@@ -61,13 +59,12 @@ class Reaction(object):
 
 
 
-    def recover_calculations(self, options = None):
+    def recover_calculations(self, options =  ['B3LYP','TVDZ']):
         for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
-                if options:
-                    shotgun = Shotgun(mol, state.type , directoryName = self.fileName,functional = options[0], basisSet =options[1])
-                else:
-                    shotgun = Shotgun(mol, state.type , directoryName = self.fileName)
+
+                shotgun = Shotgun(mol, state.type , directoryName = self.fileName,functional = options[0], basisSet =options[1])
+
 
                 self.reaction_results[mol.name] = shotgun.recover(mol)
                 print (self.reaction_results[mol.name])
@@ -97,11 +94,53 @@ class Reaction(object):
 
 
 
-    def shotgun_plots():
+    def shotgun_plots(self):
         #look at the known values and produce shotgun plots comparing error
         # Energy deltas (compare two states)
         # Molecular Dissociations (not states, just molecules)
         # Geometries.
+        # Rotational constants (a specific molecule, similar to a  comparison)
         # Frequency
-        # Rotational constants
         pass
+
+
+
+    def get_output_file_name(self, mol):
+        index = pd.MultiIndex.from_product([functional,basisSet])
+        outputName = str(index[0])+str(index[1]+mol.name)
+        
+        directoryName = self.fileName + '/'+str(mol.name)
+        
+        outputFile = directoryName + '/' + outputName + '.out')
+        return outputFile
+
+
+    def update_geom(self):
+        for key, state in self.reaction_states.items():
+            for mol in state.madeUpOf:
+                data = self.parsedJSON['Molecules'][mol.name]['xyz']
+
+                outputFile = cclib.ccopen(get_output_file_name(mol))
+                try:
+                    parsedOutputFile = outputFile.parse()
+                    newXYZ = parsedOutputFile.atomcoords[-1]
+                except:
+                    print ("To picky")
+                    sys.exit()
+    
+
+                for index, line in enumerate(data):
+                    line =  re.sub('\d', '', line) # Clear out numbers
+                    line =  re.sub('-', '', line)# Clean out negatives
+                    line =  re.sub('\.', '*', line) # swap decimals for *
+                    # At  this point just the * places are left like markers for the 
+
+                    line = str.replace(line, '*', str(newXYZ[index][0]), 1)
+                    line = str.replace(line, '*', str(newXYZ[index][1]), 2)
+                    line = str.replace(line, '*', str(newXYZ[index][2]), 3)
+
+                    data[index] = line
+
+                self.parsedJSON['Molecules'][mol.name]['xyz'] = str(data)
+    with open('data.txt', 'w') as outfile:
+        json.dump(self.parsedJSON, outfile, indent=4, sort_keys=True)
