@@ -119,10 +119,11 @@ class Reaction(object):
     def update_geom(self, options =  ['B3LYP','TVDZ']):
         for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
-                data = self.parsedJSON['Molecules'][mol.name]['xyz']
                 
-                outputFile = cclib.ccopen(self.get_output_file_name(mol, options))
+                data = self.parsedJSON['Molecules'][mol.name]['xyz']
+                print (type(data))
                 try:
+                    outputFile = cclib.ccopen(self.get_output_file_name(mol, options))
                     parsedOutputFile = outputFile.parse()
                     newXYZ = parsedOutputFile.atomcoords[-1]
                 except:
@@ -140,7 +141,9 @@ class Reaction(object):
                     line = str.replace(line, '*', str(newXYZ[index][1]), 2)
                     line = str.replace(line, '*', str(newXYZ[index][2]), 3)
 
+                    print (type(data))
                     data[index] = line
+
 
                 self.parsedJSON['Molecules'][mol.name]['xyz'] = str(data)
 
