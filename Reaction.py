@@ -2,6 +2,7 @@ from random import randint
 from State import State
 from Shotgun import Shotgun
 
+import cclib
 import json
 import time
 import sys
