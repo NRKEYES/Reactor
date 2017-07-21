@@ -116,7 +116,7 @@ class Reaction(object):
         return outputFile
 
 
-    def update_geom(self):
+    def update_geom(self, options =  ['B3LYP','TVDZ']):
         for key, state in self.reaction_states.items():
             for mol in state.madeUpOf:
                 data = self.parsedJSON['Molecules'][mol.name]['xyz']
