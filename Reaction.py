@@ -121,7 +121,7 @@ class Reaction(object):
             for mol in state.madeUpOf:
                 data = self.parsedJSON['Molecules'][mol.name]['xyz']
 
-                outputFile = cclib.ccopen(get_output_file_name(mol))
+                outputFile = cclib.ccopen(self.get_output_file_name(mol))
                 try:
                     parsedOutputFile = outputFile.parse()
                     newXYZ = parsedOutputFile.atomcoords[-1]
