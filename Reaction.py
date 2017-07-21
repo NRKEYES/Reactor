@@ -108,7 +108,7 @@ class Reaction(object):
 
     def get_output_file_name(self, mol, index =  ['B3LYP','TVDZ']):
          #index = pd.MultiIndex.from_product([options[0],options[1]])
-        outputName = str(index[0])+str(index[1]+mol.name)
+        outputName = index[0] + index[1] + str(mol.name)
         
         directoryName = self.fileName + '/'+str(mol.name)
         
