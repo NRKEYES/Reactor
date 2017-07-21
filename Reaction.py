@@ -145,7 +145,7 @@ class Reaction(object):
                     data[index] = line
 
 
-                self.parsedJSON['Molecules'][mol.name]['xyz'] = str(data)
+                self.parsedJSON['Molecules'][mol.name]['xyz'] = data
 
         with open('data.txt', 'w') as outfile:
             json.dump( self.parsedJSON, outfile, indent=4, sort_keys=True)
