@@ -1,3 +1,6 @@
+# Modified from the javascript on http://www.colby.edu/chemistry/PChem/scripts/ABC.html
+
+
 import numpy as np
 import pandas as pd
 
