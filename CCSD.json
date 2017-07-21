@@ -244,7 +244,7 @@
             "MadeUpOf": [
                 "TS-1-5"
             ],
-            "Type": "TS"
+            "Type": "freqOnly"
         },
         "3.1": {
             "ComesFrom": [
@@ -256,7 +256,7 @@
             "MadeUpOf": [
                 "TS-1-7"
             ],
-            "Type": "TS"
+            "Type": "freqOnly"
         },
         "4.0": {
             "ComesFrom": [
@@ -294,7 +294,7 @@
             "MadeUpOf": [
                 "TS-2-5"
             ],
-            "Type": "TS"
+            "Type": "freqOnly"
         },
         "5.1": {
             "ComesFrom": [
@@ -306,7 +306,7 @@
             "MadeUpOf": [
                 "TS-2-7"
             ],
-            "Type": "TS"
+            "Type": "freqOnly"
         },
         "5.2": {
             "ComesFrom": [
