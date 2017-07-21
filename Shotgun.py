@@ -73,6 +73,7 @@ class Shotgun(object):
         Optimization  = {'Well': '! TightOpt NumFreq',
                             'TS': '! OptTS NumFreq',
                             'NoOpt': ''}
+                            'freqOnly': '! Freq'
         ## ADD NO OPT option
 
 
