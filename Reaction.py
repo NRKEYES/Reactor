@@ -96,3 +96,12 @@ class Reaction(object):
         return cleanData
 
 
+
+    def shotgun_plots():
+        #look at the known values and produce shotgun plots comparing error
+        # Energy deltas (compare two states)
+        # Molecular Dissociations (not states, just molecules)
+        # Geometries.
+        # Frequency
+        # Rotational constants
+        pass
