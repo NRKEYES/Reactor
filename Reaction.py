@@ -1,6 +1,8 @@
 from random import randint
 from State import State
 from Shotgun import Shotgun
+from joblib import Parallel, delayed
+
 
 import cclib
 import json
@@ -44,18 +46,19 @@ class Reaction(object):
             state.state_print()
 
 
+    def fire_shotgun(self, mol, optType, options):
+        print ("Running Molecule: " + mol.name)
+        shotgun = Shotgun(mol, optType , directoryName = self.fileName, functional = options[0], basisSet =options[1])
+        self.reaction_results[mol.name] = shotgun.fire(mol)
+        print (self.reaction_results[mol.name])
 
     def run_calculations(self, options = ['B3LYP','TVDZ']):
         ## TODO Change this to only sumbit each molecule once....
         for key, state in self.reaction_states.items():
-            for mol in state.madeUpOf:
-                print ("Running Molecule: " + mol.name)
-
-                shotgun = Shotgun(mol, state.type , directoryName = self.fileName, functional = options[0], basisSet =options[1])
-
-                # Add to list of results:
-                self.reaction_results[mol.name] = shotgun.fire(mol)
-                print (self.reaction_results[mol.name])
+            #for mol in state.madeUpOf:
+            Parallel(n_job = 6)(
+                delayed(self.fire_shotgun(mol, state.type, options))
+                for mol in state.madeUpOf)
 
 
 
