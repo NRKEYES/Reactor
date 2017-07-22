@@ -56,7 +56,7 @@ class Reaction(object):
         ## TODO Change this to only sumbit each molecule once....
         for key, state in self.reaction_states.items():
             #for mol in state.madeUpOf:
-            Parallel(n_job = 6)(
+            Parallel(n_jobs = 6)(
                 delayed(self.fire_shotgun(mol, state.type, options))
                 for mol in state.madeUpOf)
 
