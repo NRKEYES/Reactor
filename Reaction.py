@@ -51,6 +51,7 @@ class Reaction(object):
         shotgun = Shotgun(mol, optType , directoryName = self.fileName, functional = options[0], basisSet =options[1])
         self.reaction_results[mol.name] = shotgun.fire(mol)
         print (self.reaction_results[mol.name])
+        return
 
     def run_calculations(self, options = ['B3LYP','TVDZ']):
         ## TODO Change this to only sumbit each molecule once....
