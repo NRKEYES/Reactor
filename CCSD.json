@@ -197,7 +197,7 @@
                 "5MnO+",
                 "H2"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "1.1": {
             "ComesFrom": [],
@@ -208,7 +208,7 @@
                 "7MnO+",
                 "H2"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "2.0": {
             "ComesFrom": [
@@ -220,7 +220,7 @@
             "MadeUpOf": [
                 "Well-1-5"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "2.1": {
             "ComesFrom": [
@@ -232,7 +232,7 @@
             "MadeUpOf": [
                 "Well-1-7"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "3.0": {
             "ComesFrom": [
@@ -244,7 +244,7 @@
             "MadeUpOf": [
                 "TS-1-5"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "3.1": {
             "ComesFrom": [
@@ -256,7 +256,7 @@
             "MadeUpOf": [
                 "TS-1-7"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "4.0": {
             "ComesFrom": [
@@ -269,7 +269,7 @@
             "MadeUpOf": [
                 "Well-2-5"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "4.1": {
             "ComesFrom": [
@@ -282,7 +282,7 @@
             "MadeUpOf": [
                 "Well-2-7"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "5.0": {
             "ComesFrom": [
@@ -294,7 +294,7 @@
             "MadeUpOf": [
                 "TS-2-5"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "5.1": {
             "ComesFrom": [
@@ -306,7 +306,7 @@
             "MadeUpOf": [
                 "TS-2-7"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "5.2": {
             "ComesFrom": [
@@ -318,7 +318,7 @@
                 "6MnOH+",
                 "H"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "6.0": {
             "ComesFrom": [
@@ -330,7 +330,7 @@
             "MadeUpOf": [
                 "Well-3-5"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "6.1": {
             "ComesFrom": [
@@ -342,7 +342,7 @@
             "MadeUpOf": [
                 "Well-3-7"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "7.0": {
             "ComesFrom": [
@@ -353,7 +353,7 @@
                 "5Mn+",
                 "H2O"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         },
         "7.1": {
             "ComesFrom": [
@@ -364,7 +364,7 @@
                 "7Mn+",
                 "H2O"
             ],
-            "Type": "freqOnly"
+            "Type": "NoOpt"
         }
     }
 }
