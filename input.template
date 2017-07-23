@@ -5,9 +5,10 @@
 $Opt
 
 
+!NOSOSCF
 ! Grid6 FinalGrid7
 
-%pal nprocs 16
+%pal nprocs 16i
 end
 
 %scf
