@@ -6,15 +6,13 @@ $Opt
 
 
 !NOSOSCF
+
 ! Grid6 FinalGrid7
 
 %pal nprocs 16
 end
 
-%scf
-	CNVSOSCF true
-	maxiter 1000
-end
+
 
 %geom
 	MaxIter 200
@@ -24,8 +22,9 @@ end
 end
 
 %scf 
-MaxIter 300     # Here setting MaxIter to a very high number. Intended for systems that require sometimes 1000 iterations before converging (very rare).
+MaxIter 1500     # Here setting MaxIter to a very high number. Intended for systems that require sometimes 1000 iterations before converging (very rare).
 DIISMaxEq 15  # Default value is 5. A value of 15-40 necessary for difficult systems.
+directresetfreq 1 # Default value is 15. A value of 1 (very expensive) is sometimes required. A value between 1 and 15 may be more cost-effective.
 end
 
 
