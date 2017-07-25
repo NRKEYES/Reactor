@@ -124,7 +124,6 @@ class Reaction(object):
             for mol in state.madeUpOf:
                 
                 data = self.parsedJSON['Molecules'][mol.name]['xyz']
-                print (type(data))
                 try:
                     outputFile = cclib.ccopen(self.get_output_file_name(mol, options))
                     parsedOutputFile = outputFile.parse()
