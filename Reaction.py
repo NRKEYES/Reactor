@@ -141,8 +141,8 @@ class Reaction(object):
                     # At  this point just the * places are left like markers for the 
 
                     line = str.replace(line, '*', str(newXYZ[index][0]), 1)
-                    line = str.replace(line, '*', str(newXYZ[index][1]), 2)
-                    line = str.replace(line, '*', str(newXYZ[index][2]), 3)
+                    line = str.replace(line, '*', str(newXYZ[index][1]), 1)
+                    line = str.replace(line, '*', str(newXYZ[index][2]), 1)
 
                     print (type(data))
                     data[index] = line
