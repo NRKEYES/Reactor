@@ -142,7 +142,6 @@ class Reaction(object):
                     line = str.replace(line, '*', str(newXYZ[index][1]), 1)
                     line = str.replace(line, '*', str(newXYZ[index][2]), 1)
 
-                    print (type(data))
                     data[index] = line
 
 
