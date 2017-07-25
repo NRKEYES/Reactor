@@ -5,7 +5,7 @@
 $Opt
 
 
-!NOSOSCF
+! NOSOSCF
 
 ! Grid6 FinalGrid7
 
@@ -18,7 +18,7 @@ end
 	MaxIter 200
 	Calc_Hess true # Calculate Hessian in the beginning
 	NumHess true # Request numerical Hessian (analytical not available)
-	Recalc_Hess 5  # Recalculate the Hessian every 5 steps
+	Recalc_Hess 1  # Recalculate the Hessian every 5 steps
 end
 
 %scf 
