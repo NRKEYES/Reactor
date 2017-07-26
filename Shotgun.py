@@ -150,12 +150,17 @@ class Shotgun(object):
 
 
     def get_ZPE(self, filename):
-        with open(filename, 'r') as file:
-            ZPE = re.findall(r'FINAL SINGLE POINT ENERGY     (.*)', file) #Pull ZPE values in Hartree
-            if not ZPE:
-                return 0
-            ZPE = ZPE[len(ZPE)-1]
-            return ZPE
+        try:
+            with open(filename, 'r') as file:
+                ZPE = re.findall(r'FINAL SINGLE POINT ENERGY     (.*)', file) #Pull ZPE values in Hartree
+                if not ZPE:
+                    return 0
+                else:
+                    ZPE = ZPE[len(ZPE)-1]
+                    return ZPE
+        except:
+            print ("Can not open file for ZPE")
+
 
 
 
@@ -186,9 +191,11 @@ class Shotgun(object):
                     self.results.set_value(index,'Energy', np.nan)
             else: # no opt, just set energy value 
                 self.results.set_value(index,'Energy', parsed.scfenergies[-1])
+
         except:
             print ("!!!!!!!!!!!!!!!!!!!!!!!! There was a parsing error.!!!!!!!!!!!!!!!!!!!!!!!!")
             print ("Filename: "+ filename)
+        
         #Remove any work files that exist
         try:
             for file in glob.glob(self.directoryName + "/" + self.filename(index, row)):
