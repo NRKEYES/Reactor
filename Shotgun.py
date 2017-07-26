@@ -152,6 +152,7 @@ class Shotgun(object):
     def get_ZPE(self, filename):
         try:
             with open(filename, 'r') as file:
+                file = file.read()
                 ZPE = re.findall(r'FINAL SINGLE POINT ENERGY     (.*)', file) #Pull ZPE values in Hartree
                 if not ZPE:
                     return 0
