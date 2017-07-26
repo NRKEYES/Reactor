@@ -168,8 +168,8 @@ class Shotgun(object):
             if self.OptType == "Well" or self.OptType =='TS': # if opt was performed, check for completion
 
                 if parsed.optdone: #Checking for completion
-                    energy = parsed.scfenergies[-1])+ self.get_ZPE(filename)
-                    self.results.set_value(index,'Energy', parsed.scfenergies[-1])
+                    energy = parsed.scfenergies[-1]+ self.get_ZPE(filename)
+                    self.results.set_value(index,'Energy', energy)
                     self.results.set_value(index,'Job Status', 'Finished')
                     self.results.set_value(index, 'Freq', parsed.vibfreqs)
                     self.results.set_value(index, 'RC', Rotation_Constants.rotation(filename))
