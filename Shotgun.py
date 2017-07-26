@@ -153,8 +153,8 @@ class Shotgun(object):
         with open(filename, 'r') as file:
             ZPE = re.findall(r'FINAL SINGLE POINT ENERGY     (.*)', file) #Pull ZPE values in Hartree
             if not ZPE:
-                pass
-	        ZPE = ZPE[len(ZPE)-1]
+                return 0
+            ZPE = ZPE[len(ZPE)-1]
             return ZPE
 
 
