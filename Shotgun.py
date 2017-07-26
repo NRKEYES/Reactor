@@ -157,7 +157,7 @@ class Shotgun(object):
                 if not ZPE:
                     return 0
                 else:
-                    ZPE = ZPE[len(ZPE)-1]
+                    ZPE = int(ZPE[-1])
                     return ZPE
         except:
             print ("Can not open file for ZPE")
