@@ -149,3 +149,5 @@ class Reaction(object):
 
         with open('data.txt', 'w') as outfile:
             json.dump( self.parsedJSON, outfile, indent=4, sort_keys=True)
+
+
