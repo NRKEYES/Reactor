@@ -153,12 +153,12 @@ class Shotgun(object):
         try:
             with open(filename, 'r') as file:
                 file = file.read()
-                ZPE = re.findall(r'FINAL SINGLE POINT ENERGY     (.*)', file) #Pull ZPE values in Hartree
+                ZPE = re.findall(r'Non-thermal .ZPE. correction              (.*) Eh', file) #Pull ZPE values in Hartree
                 if not ZPE:
                     return 0
                 else:
                     ZPE = float(ZPE[-1])
-                    return ZPE
+                    return ZPE*27 # Convent ZPE to eV
         except:
             print ("Can not open file for ZPE")
 
